@@ -1,0 +1,1 @@
+这里是测试夹具说明文件，不应该被 LocalKnowledgeFileLoader 当作业务知识入库。

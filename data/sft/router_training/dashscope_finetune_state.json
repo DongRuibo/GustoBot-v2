@@ -1,0 +1,17 @@
+{
+  "datasets": {
+    "train": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_dashscope_train.jsonl",
+    "dev": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_dashscope_dev.jsonl",
+    "test": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_dashscope_test.jsonl"
+  },
+  "updated_at": "2026-05-26T10:55:55.641170+00:00",
+  "training_file_id": "279131b8-3df2-4e04-9260-43fa7a936445",
+  "validation_file_id": "20fc0b1b-3dbd-4e99-b16c-572feba9cc1f",
+  "job_id": "ft-202605261632-ecbb",
+  "job_status": "SUCCEEDED",
+  "finetuned_output": "qwen3-8b-ft-202605261632-ecbb",
+  "base_model": "qwen3-8b",
+  "deployment_id": "qwen3-8b-59d22cc35f09",
+  "deployment_status": "RUNNING",
+  "deployed_model": "qwen3-8b-ft-202605261632-ecbb"
+}

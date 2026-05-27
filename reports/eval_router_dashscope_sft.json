@@ -1,0 +1,7018 @@
+{
+  "total": 230,
+  "router_accuracy": 0.9130434782608695,
+  "guardrails_block_accuracy": 1.0,
+  "dangerous_input_block_accuracy": 1.0,
+  "answer_has_evidence_rate": 1.0,
+  "evidence_source_coverage_rate": 0.9130434782608695,
+  "answer_keyword_hit_rate": 1.0,
+  "citation_coverage_rate": 1.0,
+  "min_evidence_count_rate": 1.0,
+  "failure_reason_counts": {
+    "route_mismatch": 20,
+    "evidence_source_missing": 20
+  },
+  "route_breakdown": {
+    "clarify": {
+      "total": 20,
+      "route_accuracy": 1.0,
+      "actual_routes": {
+        "clarify": 20
+      },
+      "latency_ms_p50": 785.5810245000328,
+      "latency_ms_p95": 3754.7654319999992
+    },
+    "general": {
+      "total": 10,
+      "route_accuracy": 1.0,
+      "actual_routes": {
+        "general": 10
+      },
+      "latency_ms_p50": 3561.764629999995,
+      "latency_ms_p95": 6081.771144000001
+    },
+    "graphrag": {
+      "total": 60,
+      "route_accuracy": 0.6666666666666666,
+      "actual_routes": {
+        "kb": 20,
+        "graphrag": 40
+      },
+      "latency_ms_p50": 45.64788450002766,
+      "latency_ms_p95": 7254.225571000006
+    },
+    "kb": {
+      "total": 60,
+      "route_accuracy": 1.0,
+      "actual_routes": {
+        "kb": 60
+      },
+      "latency_ms_p50": 44.24212349998413,
+      "latency_ms_p95": 13488.643485000011
+    },
+    "multi": {
+      "total": 20,
+      "route_accuracy": 1.0,
+      "actual_routes": {
+        "multi": 20
+      },
+      "latency_ms_p50": 40.69337550001251,
+      "latency_ms_p95": 11139.950000999988
+    },
+    "text2sql": {
+      "total": 60,
+      "route_accuracy": 1.0,
+      "actual_routes": {
+        "text2sql": 60
+      },
+      "latency_ms_p50": 45.02152899999601,
+      "latency_ms_p95": 1359.1035759999954
+    }
+  },
+  "latency_ms_avg": 1694.4255964000008,
+  "latency_ms_p50": 45.303843499993945,
+  "latency_ms_p95": 11809.997194000005,
+  "latency_ms_p99": 14999.804188000042,
+  "details": [
+    {
+      "sample_id": "food-general-001",
+      "category": "general",
+      "message": "你好，介绍一下你能做什么",
+      "expected_route": "general",
+      "actual_route": "general",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "general"
+      ],
+      "expected_evidence_sources": [
+        "general"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 3876.125797
+    },
+    {
+      "sample_id": "food-general-002",
+      "category": "general",
+      "message": "您好，GustoBot 可以帮我做什么？",
+      "expected_route": "general",
+      "actual_route": "general",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "general"
+      ],
+      "expected_evidence_sources": [
+        "general"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 3782.3908389999942
+    },
+    {
+      "sample_id": "food-general-003",
+      "category": "general",
+      "message": "hello",
+      "expected_route": "general",
+      "actual_route": "general",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "general"
+      ],
+      "expected_evidence_sources": [
+        "general"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 2101.2033310000006
+    },
+    {
+      "sample_id": "food-general-004",
+      "category": "general",
+      "message": "hi，简单介绍一下你自己",
+      "expected_route": "general",
+      "actual_route": "general",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "general"
+      ],
+      "expected_evidence_sources": [
+        "general"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 3938.9543119999926
+    },
+    {
+      "sample_id": "food-general-005",
+      "category": "general",
+      "message": "你是谁？",
+      "expected_route": "general",
+      "actual_route": "general",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "general"
+      ],
+      "expected_evidence_sources": [
+        "general"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 3229.6394329999885
+    },
+    {
+      "sample_id": "food-general-006",
+      "category": "general",
+      "message": "你好，食品数据底座现在支持哪些问答？",
+      "expected_route": "general",
+      "actual_route": "general",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "general"
+      ],
+      "expected_evidence_sources": [
+        "general"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 2458.702767000005
+    },
+    {
+      "sample_id": "food-general-007",
+      "category": "general",
+      "message": "您好，帮我说明一下系统能力",
+      "expected_route": "general",
+      "actual_route": "general",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "general"
+      ],
+      "expected_evidence_sources": [
+        "general"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 6081.771144000001
+    },
+    {
+      "sample_id": "food-general-008",
+      "category": "general",
+      "message": "hello, what can you do?",
+      "expected_route": "general",
+      "actual_route": "general",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "general"
+      ],
+      "expected_evidence_sources": [
+        "general"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 3341.1384209999965
+    },
+    {
+      "sample_id": "food-general-009",
+      "category": "general",
+      "message": "你好，今天可以帮我查食品数据吗？",
+      "expected_route": "general",
+      "actual_route": "general",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "general"
+      ],
+      "expected_evidence_sources": [
+        "general"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 2067.781628000006
+    },
+    {
+      "sample_id": "food-general-010",
+      "category": "general",
+      "message": "帮助：我可以怎么提问？",
+      "expected_route": "general",
+      "actual_route": "general",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "general"
+      ],
+      "expected_evidence_sources": [
+        "general"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 4014.257174000008
+    },
+    {
+      "sample_id": "food-kb-001",
+      "category": "kb",
+      "message": "解释一下 Legumes and Legume Products 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 11535.578810000005
+    },
+    {
+      "sample_id": "food-kb-002",
+      "category": "kb",
+      "message": "解释一下蛋白质在食品营养中的作用",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 4781.900269000005
+    },
+    {
+      "sample_id": "food-kb-003",
+      "category": "kb",
+      "message": "解释一下蛋白质在食品营养中的作用",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 55.21184799999901
+    },
+    {
+      "sample_id": "food-kb-004",
+      "category": "kb",
+      "message": "食品营养标签应该怎么看？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 13059.069856000007
+    },
+    {
+      "sample_id": "food-kb-005",
+      "category": "kb",
+      "message": "解释一下 Dairy and Egg Products 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 12226.784170000003
+    },
+    {
+      "sample_id": "food-kb-006",
+      "category": "kb",
+      "message": "介绍一下 FoodOn 类别和同义词说明",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 13208.76510399998
+    },
+    {
+      "sample_id": "food-kb-007",
+      "category": "kb",
+      "message": "解释一下蛋白质在食品营养中的作用",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 54.36333200000831
+    },
+    {
+      "sample_id": "food-kb-008",
+      "category": "kb",
+      "message": "解释一下蛋白质在食品营养中的作用",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 51.25678600001038
+    },
+    {
+      "sample_id": "food-kb-009",
+      "category": "kb",
+      "message": "解释一下 Poultry Products 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 13033.502094999989
+    },
+    {
+      "sample_id": "food-kb-010",
+      "category": "kb",
+      "message": "解释一下蛋白质在食品营养中的作用",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 39.9874089999912
+    },
+    {
+      "sample_id": "food-kb-011",
+      "category": "kb",
+      "message": "介绍一下 FoodOn 类别说明：tortoise",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 6750.852930999998
+    },
+    {
+      "sample_id": "food-kb-012",
+      "category": "kb",
+      "message": "糖分和碳水有什么区别？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 8120.713106000011
+    },
+    {
+      "sample_id": "food-kb-013",
+      "category": "kb",
+      "message": "解释一下 Restaurant Foods 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 13488.643485000011
+    },
+    {
+      "sample_id": "food-kb-014",
+      "category": "kb",
+      "message": "解释一下蛋白质在食品营养中的作用",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 42.928270999993856
+    },
+    {
+      "sample_id": "food-kb-015",
+      "category": "kb",
+      "message": "糖分和碳水有什么区别？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 32.441366999989896
+    },
+    {
+      "sample_id": "food-kb-016",
+      "category": "kb",
+      "message": "介绍一下 FoodOn 类别说明：fermenting sugar cane juice",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 7136.947450999997
+    },
+    {
+      "sample_id": "food-kb-017",
+      "category": "kb",
+      "message": "解释一下 Cereal Grains and Pasta 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 15442.26341000001
+    },
+    {
+      "sample_id": "food-kb-018",
+      "category": "kb",
+      "message": "食品过敏原是什么意思？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 3943.1363129999963
+    },
+    {
+      "sample_id": "food-kb-019",
+      "category": "kb",
+      "message": "FoodOn 类别和同义词在系统里怎么用？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 9168.710973999992
+    },
+    {
+      "sample_id": "food-kb-020",
+      "category": "kb",
+      "message": "食品营养标签应该怎么看？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 56.221756000013556
+    },
+    {
+      "sample_id": "food-kb-021",
+      "category": "kb",
+      "message": "解释一下 American Indian/Alaska Native Foods 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 14163.830702000012
+    },
+    {
+      "sample_id": "food-kb-022",
+      "category": "kb",
+      "message": "为什么食品分类对检索和统计有帮助？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 35.682583999999906
+    },
+    {
+      "sample_id": "food-kb-023",
+      "category": "kb",
+      "message": "为什么食品分类对检索和统计有帮助？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.91723299999239
+    },
+    {
+      "sample_id": "food-kb-024",
+      "category": "kb",
+      "message": "USDA FoodData Central 的 fdc_id 是什么？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.21268500000497
+    },
+    {
+      "sample_id": "food-kb-025",
+      "category": "kb",
+      "message": "解释一下 Fast Foods 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 11520.005949999984
+    },
+    {
+      "sample_id": "food-kb-026",
+      "category": "kb",
+      "message": "介绍一下 FoodOn 类别说明：yogurt food product",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 40.39495999998621
+    },
+    {
+      "sample_id": "food-kb-027",
+      "category": "kb",
+      "message": "糖分和碳水有什么区别？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 38.982398000001695
+    },
+    {
+      "sample_id": "food-kb-028",
+      "category": "kb",
+      "message": "为什么食品分类对检索和统计有帮助？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 43.80002999999988
+    },
+    {
+      "sample_id": "food-kb-029",
+      "category": "kb",
+      "message": "解释一下 Sauces/Spreads/Dips/Condiments 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 47.59634200001983
+    },
+    {
+      "sample_id": "food-kb-030",
+      "category": "kb",
+      "message": "USDA FoodData Central 的 fdc_id 是什么？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 39.136415000001534
+    },
+    {
+      "sample_id": "food-kb-031",
+      "category": "kb",
+      "message": "介绍一下 FoodOn 类别说明：wort food product",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.05307499999367
+    },
+    {
+      "sample_id": "food-kb-032",
+      "category": "kb",
+      "message": "介绍一下 USDA Foundation、SR Legacy 和 Branded 数据的区别",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 47.446506
+    },
+    {
+      "sample_id": "food-kb-033",
+      "category": "kb",
+      "message": "解释一下 Biscuits/Cookies 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 16781.141014000015
+    },
+    {
+      "sample_id": "food-kb-034",
+      "category": "kb",
+      "message": "FoodOn 类别和同义词在系统里怎么用？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 40.36553100002038
+    },
+    {
+      "sample_id": "food-kb-035",
+      "category": "kb",
+      "message": "解释一下蛋白质在食品营养中的作用",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 32.10262400000374
+    },
+    {
+      "sample_id": "food-kb-036",
+      "category": "kb",
+      "message": "介绍一下 FoodOn 类别说明：pickled cabbage food product",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.96850299996413
+    },
+    {
+      "sample_id": "food-kb-037",
+      "category": "kb",
+      "message": "解释一下 Meat/Poultry/Other Animals Unprepared/Unprocessed 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 42.53873100003602
+    },
+    {
+      "sample_id": "food-kb-038",
+      "category": "kb",
+      "message": "USDA FoodData Central 的 fdc_id 是什么？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.431171999974595
+    },
+    {
+      "sample_id": "food-kb-039",
+      "category": "kb",
+      "message": "USDA FoodData Central 的 fdc_id 是什么？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 36.951423999994404
+    },
+    {
+      "sample_id": "food-kb-040",
+      "category": "kb",
+      "message": "解释一下蛋白质在食品营养中的作用",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 42.43641200002912
+    },
+    {
+      "sample_id": "food-kb-041",
+      "category": "kb",
+      "message": "解释一下 Frozen Fruit & Fruit Juice Concentrates 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 36.76125399999819
+    },
+    {
+      "sample_id": "food-kb-042",
+      "category": "kb",
+      "message": "为什么食品分类对检索和统计有帮助？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 35.16412899995203
+    },
+    {
+      "sample_id": "food-kb-043",
+      "category": "kb",
+      "message": "USDA FoodData Central 的 fdc_id 是什么？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 36.94890899998882
+    },
+    {
+      "sample_id": "food-kb-044",
+      "category": "kb",
+      "message": "解释一下蛋白质在食品营养中的作用",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 39.78844100004153
+    },
+    {
+      "sample_id": "food-kb-045",
+      "category": "kb",
+      "message": "解释一下 Nut & Seed Butters 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 37.748714000031214
+    },
+    {
+      "sample_id": "food-kb-046",
+      "category": "kb",
+      "message": "介绍一下 FoodOn 类别说明：new zealand cheddar cheese food product",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 31.350300999974934
+    },
+    {
+      "sample_id": "food-kb-047",
+      "category": "kb",
+      "message": "食品过敏原是什么意思？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 36.168682999971224
+    },
+    {
+      "sample_id": "food-kb-048",
+      "category": "kb",
+      "message": "食品过敏原是什么意思？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 33.91432099999747
+    },
+    {
+      "sample_id": "food-kb-049",
+      "category": "kb",
+      "message": "解释一下 Sausages, Hotdogs & Brats 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 10311.635362000005
+    },
+    {
+      "sample_id": "food-kb-050",
+      "category": "kb",
+      "message": "糖分和碳水有什么区别？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.47342999998227
+    },
+    {
+      "sample_id": "food-kb-051",
+      "category": "kb",
+      "message": "介绍一下 FoodOn 类别说明：chicken meat food product",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.63531900000817
+    },
+    {
+      "sample_id": "food-kb-052",
+      "category": "kb",
+      "message": "FoodOn 类别和同义词在系统里怎么用？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 43.35856599999488
+    },
+    {
+      "sample_id": "food-kb-053",
+      "category": "kb",
+      "message": "解释一下 Cooked & Prepared 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 36.86627799999087
+    },
+    {
+      "sample_id": "food-kb-054",
+      "category": "kb",
+      "message": "糖分和碳水有什么区别？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 42.814577000001464
+    },
+    {
+      "sample_id": "food-kb-055",
+      "category": "kb",
+      "message": "USDA FoodData Central 的 fdc_id 是什么？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.547476999994615
+    },
+    {
+      "sample_id": "food-kb-056",
+      "category": "kb",
+      "message": "介绍一下 FoodOn 类别说明：ice cream food product",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 36.318402000006245
+    },
+    {
+      "sample_id": "food-kb-057",
+      "category": "kb",
+      "message": "解释一下 Oriental, Mexican & Ethnic Sauces 这类食品的营养标签含义",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 13467.924525
+    },
+    {
+      "sample_id": "food-kb-058",
+      "category": "kb",
+      "message": "介绍一下 USDA Foundation、SR Legacy 和 Branded 数据的区别",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.424042999968606
+    },
+    {
+      "sample_id": "food-kb-059",
+      "category": "kb",
+      "message": "介绍一下 USDA Foundation、SR Legacy 和 Branded 数据的区别",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.60627600000089
+    },
+    {
+      "sample_id": "food-kb-060",
+      "category": "kb",
+      "message": "食品过敏原是什么意思？",
+      "expected_route": "kb",
+      "actual_route": "kb",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 48.05779299999813
+    },
+    {
+      "sample_id": "food-graph-001",
+      "category": "graphrag",
+      "message": "ORANGE CHICKEN FRIED RICE 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 44.12539600002674
+    },
+    {
+      "sample_id": "food-graph-002",
+      "category": "graphrag",
+      "message": "HOT GREEN CURRY AUTHENTIC PASTE, HOT GREEN CURRY 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 38.16110899998648
+    },
+    {
+      "sample_id": "food-graph-003",
+      "category": "graphrag",
+      "message": "PASTEURIZED PROCESS CHEESE FOOD ALTERNATIVE, CHEDDAR SLICES, CHEDDAR SLICES 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 35.569818999988456
+    },
+    {
+      "sample_id": "food-graph-004",
+      "category": "graphrag",
+      "message": "Apple juice, with added vitamin C, from concentrate, shelf stable 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 36.08477099999163
+    },
+    {
+      "sample_id": "food-graph-005",
+      "category": "graphrag",
+      "message": "ORGANIC MACARONI PRODUCT, RIGATONI 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 37.13433399997257
+    },
+    {
+      "sample_id": "food-graph-006",
+      "category": "graphrag",
+      "message": "ORGANIC RASPBERRIES 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 46.83058099999471
+    },
+    {
+      "sample_id": "food-graph-007",
+      "category": "graphrag",
+      "message": "Grape juice, white, with added vitamin C, from concentrate, shelf stable 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 40.129755999998906
+    },
+    {
+      "sample_id": "food-graph-008",
+      "category": "graphrag",
+      "message": "Kale, raw 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 39.71305300001404
+    },
+    {
+      "sample_id": "food-graph-009",
+      "category": "graphrag",
+      "message": "BELL'S, SLICED RIPE OLIVES 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 34.29085800001985
+    },
+    {
+      "sample_id": "food-graph-010",
+      "category": "graphrag",
+      "message": "INTENSE ORANGE DARK CHOCOLATE WITH ORANGE AND ALMOND SLIVERS, INTENSE ORANGE 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 41.984051000042655
+    },
+    {
+      "sample_id": "food-graph-011",
+      "category": "graphrag",
+      "message": "Fruit cocktail, (peach and pineapple and pear and grape and cherry), canned, light syrup, solids and liquids 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 47.05018300001029
+    },
+    {
+      "sample_id": "food-graph-012",
+      "category": "graphrag",
+      "message": "SPINACI E RICOTTA RAVIOLI PASTA 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 39.15640499997153
+    },
+    {
+      "sample_id": "food-graph-013",
+      "category": "graphrag",
+      "message": "Beef, rib, small end (ribs 10-12), separable lean and fat, trimmed to 0\" fat, select, cooked, broiled 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 3205.7958810000287
+    },
+    {
+      "sample_id": "food-graph-014",
+      "category": "graphrag",
+      "message": "Beef, plate steak, boneless, inside skirt, separable lean only, trimmed to 0\" fat, select, raw 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.749965999997585
+    },
+    {
+      "sample_id": "food-graph-015",
+      "category": "graphrag",
+      "message": "CRUSHED TOMATOES 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 61.792442000012215
+    },
+    {
+      "sample_id": "food-graph-016",
+      "category": "graphrag",
+      "message": "Soup, clam chowder, new england, canned, ready-to-serve 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 6001.038467
+    },
+    {
+      "sample_id": "food-graph-017",
+      "category": "graphrag",
+      "message": "COARSE PINK SALT GRINDER 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 54.7359280000137
+    },
+    {
+      "sample_id": "food-graph-018",
+      "category": "graphrag",
+      "message": "CHOCOLATE PEANUT BUTTER ICE CREAM, CHOCOLATE PEANUT BUTTER 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 57.936801999971976
+    },
+    {
+      "sample_id": "food-graph-019",
+      "category": "graphrag",
+      "message": "SEASONED & SMOKED ST. LOUIS STYLE PORK SPARERIBS IN ORIGINAL BBQ SAUCE, ST. LOUIS STYLE PORK SPARERIBS 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 3616.0592890000203
+    },
+    {
+      "sample_id": "food-graph-020",
+      "category": "graphrag",
+      "message": "Cookies, marshmallow, chocolate-coated (includes marshmallow pies) 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 50.44511700003795
+    },
+    {
+      "sample_id": "food-graph-021",
+      "category": "graphrag",
+      "message": "SMOKEHOUSE ALMONDS, SMOKEHOUSE 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.24311500000522
+    },
+    {
+      "sample_id": "food-graph-022",
+      "category": "graphrag",
+      "message": "Alcoholic beverage, wine, table, white, Pinot Blanc 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 40.310951000037676
+    },
+    {
+      "sample_id": "food-graph-023",
+      "category": "graphrag",
+      "message": "FUEGO HOT CHILI PEPPER & LIME ARTISAN STYLE KETTLE COOKED POTATO CHIPS, FUEGO 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 39.856475000021874
+    },
+    {
+      "sample_id": "food-graph-024",
+      "category": "graphrag",
+      "message": "PROVOLONE SLICED CHEESE WITH SMOKE FLAVORING, PROVOLONE 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.07840399998031
+    },
+    {
+      "sample_id": "food-graph-025",
+      "category": "graphrag",
+      "message": "Oscar Mayer, Braunschweiger Liver Sausage (sliced) 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 2812.568322000004
+    },
+    {
+      "sample_id": "food-graph-026",
+      "category": "graphrag",
+      "message": "Loquats, raw 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 52.020162000019354
+    },
+    {
+      "sample_id": "food-graph-027",
+      "category": "graphrag",
+      "message": "BROTH BASE & SEASONING VEGETABLE 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 42.89227999998957
+    },
+    {
+      "sample_id": "food-graph-028",
+      "category": "graphrag",
+      "message": "Loquats, raw 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 7254.225571000006
+    },
+    {
+      "sample_id": "food-graph-029",
+      "category": "graphrag",
+      "message": "Beef, ground, 95% lean meat / 5% fat, crumbles, cooked, pan-browned 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 37.88938300004929
+    },
+    {
+      "sample_id": "food-graph-030",
+      "category": "graphrag",
+      "message": "BEAR NAKED, GRANOLA, FRUIT AND NUTTY 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 43.810086000007686
+    },
+    {
+      "sample_id": "food-graph-031",
+      "category": "graphrag",
+      "message": "Pork, fresh, loin, blade (chops), bone-in, separable lean and fat, cooked, pan-fried 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 43.7053590000005
+    },
+    {
+      "sample_id": "food-graph-032",
+      "category": "graphrag",
+      "message": "Pie, Dutch Apple, Commercially Prepared 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 51.49912699999959
+    },
+    {
+      "sample_id": "food-graph-033",
+      "category": "graphrag",
+      "message": "MILD CHEDDAR CHEESE 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.35308399999849
+    },
+    {
+      "sample_id": "food-graph-034",
+      "category": "graphrag",
+      "message": "Fast foods, griddle cake sandwich, sausage 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 8395.310404999975
+    },
+    {
+      "sample_id": "food-graph-035",
+      "category": "graphrag",
+      "message": "DARK CHOCOLATE CHIP CHEWY GRANOLA BARS, DARK CHOCOLATE 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.58219200004032
+    },
+    {
+      "sample_id": "food-graph-036",
+      "category": "graphrag",
+      "message": "CINNAMON APPLE SAUCE, CINNAMON 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 49.363201999995
+    },
+    {
+      "sample_id": "food-graph-037",
+      "category": "graphrag",
+      "message": "SHOPRITE, STUFFING MIX, CHICKEN, CHICKEN 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 2754.956187999994
+    },
+    {
+      "sample_id": "food-graph-038",
+      "category": "graphrag",
+      "message": "Mayonnaise, reduced-calorie or diet, cholesterol-free 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 51.81284900004357
+    },
+    {
+      "sample_id": "food-graph-039",
+      "category": "graphrag",
+      "message": "SIMPLE HARVEST, CUT GREEN BEANS 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 54.28248100002975
+    },
+    {
+      "sample_id": "food-graph-040",
+      "category": "graphrag",
+      "message": "BROOKLYN BLACKOUT CAKE ICE CREAM, BROOKLYN BLACKOUT CAKE 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 3148.5238390000063
+    },
+    {
+      "sample_id": "food-graph-041",
+      "category": "graphrag",
+      "message": "Beef, New Zealand, imported, sweetbread, raw 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.00069999998368
+    },
+    {
+      "sample_id": "food-graph-042",
+      "category": "graphrag",
+      "message": "ENRICHED MACARONI PRODUCT, MEDIUM SHELLS 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 38.7018810000086
+    },
+    {
+      "sample_id": "food-graph-043",
+      "category": "graphrag",
+      "message": "Pasta, dry, unenriched 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 2798.71224499999
+    },
+    {
+      "sample_id": "food-graph-044",
+      "category": "graphrag",
+      "message": "SUBWAY, steak & cheese sub on white bread with American cheese, lettuce and tomato 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 42.88925299999846
+    },
+    {
+      "sample_id": "food-graph-045",
+      "category": "graphrag",
+      "message": "MAPLE BAKED BEANS, MAPLE 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 38.297567000029176
+    },
+    {
+      "sample_id": "food-graph-046",
+      "category": "graphrag",
+      "message": "Mung beans, mature seeds, sprouted, cooked, stir-fried 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 3961.9755870000404
+    },
+    {
+      "sample_id": "food-graph-047",
+      "category": "graphrag",
+      "message": "Yogurt, Greek, nonfat, Fruit on Bottom, Pomegranate, CHOBANI 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.2546029999894
+    },
+    {
+      "sample_id": "food-graph-048",
+      "category": "graphrag",
+      "message": "PEAR HALVES BARTLETT PEARS IN EXTRA LIGHT SYRUP 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 42.06671899999037
+    },
+    {
+      "sample_id": "food-graph-049",
+      "category": "graphrag",
+      "message": "VANILLA WAFER, VANILLA 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 11809.997194000005
+    },
+    {
+      "sample_id": "food-graph-050",
+      "category": "graphrag",
+      "message": "Macaroni and cheese loaf, chicken, pork and beef 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 56.15032999997993
+    },
+    {
+      "sample_id": "food-graph-051",
+      "category": "graphrag",
+      "message": "DICED APPLES & PEARS IN EXTRA LIGHT SYRUP WITH CARAMEL, CARAMEL 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 51.37532800000599
+    },
+    {
+      "sample_id": "food-graph-052",
+      "category": "graphrag",
+      "message": "Squash, winter, hubbard, baked, with salt 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 45.71357700001499
+    },
+    {
+      "sample_id": "food-graph-053",
+      "category": "graphrag",
+      "message": "SRIRACHA HOT CHILI SAUCE, SRIRACHA HOT CHILI 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 48.28870599999391
+    },
+    {
+      "sample_id": "food-graph-054",
+      "category": "graphrag",
+      "message": "FRENCH VANILLA CAPPUCCINO CAFE STYLE DRINK MIX, FRENCH VANILLA 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 43.04641199996695
+    },
+    {
+      "sample_id": "food-graph-055",
+      "category": "graphrag",
+      "message": "PREMIUM PURE CANE GRANULATED SUGAR 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 4101.14235399999
+    },
+    {
+      "sample_id": "food-graph-056",
+      "category": "graphrag",
+      "message": "Babyfood, vegetable, butternut squash and corn 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.569475000017064
+    },
+    {
+      "sample_id": "food-graph-057",
+      "category": "graphrag",
+      "message": "PINEAPPLE TIDBITS IN 100% PINEAPPLE JUICE 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 39.975373999993735
+    },
+    {
+      "sample_id": "food-graph-058",
+      "category": "graphrag",
+      "message": "APPLE PIE LIGHT PROBIOTIC BLENDED NONFAT YOGURT, APPLE PIE 属于什么食品类别？",
+      "expected_route": "graphrag",
+      "actual_route": "kb",
+      "route_ok": false,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": false,
+      "evidence_count": 5,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [
+        "route_mismatch",
+        "evidence_source_missing"
+      ],
+      "latency_ms": 14999.804188000042
+    },
+    {
+      "sample_id": "food-graph-059",
+      "category": "graphrag",
+      "message": "DARK KIDNEY BEANS 的营养标签和主要营养素有哪些？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 48.08478299997887
+    },
+    {
+      "sample_id": "food-graph-060",
+      "category": "graphrag",
+      "message": "ORGANIC BLACK BEAN VEGAN SOUP 有哪些配料？",
+      "expected_route": "graphrag",
+      "actual_route": "graphrag",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph"
+      ],
+      "expected_evidence_sources": [
+        "graph"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 54.57340399999566
+    },
+    {
+      "sample_id": "food-sql-001",
+      "category": "text2sql",
+      "message": "Richardson Oilseed Products (US) Limited 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 47.84676000002719
+    },
+    {
+      "sample_id": "food-sql-002",
+      "category": "text2sql",
+      "message": "统计 Vegetables and Vegetable Products 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 40.01560099999324
+    },
+    {
+      "sample_id": "food-sql-003",
+      "category": "text2sql",
+      "message": "查询糖分最高的前 5 个食品商品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 56.01232400005074
+    },
+    {
+      "sample_id": "food-sql-004",
+      "category": "text2sql",
+      "message": "统计食品糖分最高的前 10 个产品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 48.60256000000618
+    },
+    {
+      "sample_id": "food-sql-005",
+      "category": "text2sql",
+      "message": "统计食品分类下的产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 29.20367699999815
+    },
+    {
+      "sample_id": "food-sql-006",
+      "category": "text2sql",
+      "message": "Seaboard Foods LLC 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 49.33849499997223
+    },
+    {
+      "sample_id": "food-sql-007",
+      "category": "text2sql",
+      "message": "统计 Spices and Herbs 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.24134500002219
+    },
+    {
+      "sample_id": "food-sql-008",
+      "category": "text2sql",
+      "message": "查询糖分最高的前 5 个食品商品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.585442000003695
+    },
+    {
+      "sample_id": "food-sql-009",
+      "category": "text2sql",
+      "message": "食品产品按分类统计数量并排序",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 33.960279999973864
+    },
+    {
+      "sample_id": "food-sql-010",
+      "category": "text2sql",
+      "message": "食品产品按分类统计数量并排序",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 40.73930399999881
+    },
+    {
+      "sample_id": "food-sql-011",
+      "category": "text2sql",
+      "message": "Sun-Maid Growers 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.8400010000114
+    },
+    {
+      "sample_id": "food-sql-012",
+      "category": "text2sql",
+      "message": "统计 Finfish and Shellfish Products 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 35.727355999995325
+    },
+    {
+      "sample_id": "food-sql-013",
+      "category": "text2sql",
+      "message": "按蛋白质含量给食品做 top 10 排名",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 9331.091266999976
+    },
+    {
+      "sample_id": "food-sql-014",
+      "category": "text2sql",
+      "message": "统计蛋白质最高的前 6 个食品产品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.31354799999099
+    },
+    {
+      "sample_id": "food-sql-015",
+      "category": "text2sql",
+      "message": "统计食品分类下的产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.59055099999887
+    },
+    {
+      "sample_id": "food-sql-016",
+      "category": "text2sql",
+      "message": "Premier Organics, Inc. 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.78315000001476
+    },
+    {
+      "sample_id": "food-sql-017",
+      "category": "text2sql",
+      "message": "统计 Cereal Grains and Pasta 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 40.76078899998947
+    },
+    {
+      "sample_id": "food-sql-018",
+      "category": "text2sql",
+      "message": "按蛋白质含量给食品做 top 10 排名",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.819788999987395
+    },
+    {
+      "sample_id": "food-sql-019",
+      "category": "text2sql",
+      "message": "查询糖分最高的前 5 个食品商品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 47.92017400001214
+    },
+    {
+      "sample_id": "food-sql-020",
+      "category": "text2sql",
+      "message": "统计蛋白质最高的前 6 个食品产品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 46.50128399998721
+    },
+    {
+      "sample_id": "food-sql-021",
+      "category": "text2sql",
+      "message": "Schnuck Markets, Inc. 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 51.97002900001735
+    },
+    {
+      "sample_id": "food-sql-022",
+      "category": "text2sql",
+      "message": "统计 Baby Foods 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.85705500002268
+    },
+    {
+      "sample_id": "food-sql-023",
+      "category": "text2sql",
+      "message": "查询糖分最高的前 5 个食品商品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 39.59071999997832
+    },
+    {
+      "sample_id": "food-sql-024",
+      "category": "text2sql",
+      "message": "统计食品糖分最高的前 10 个产品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.12826100000211
+    },
+    {
+      "sample_id": "food-sql-025",
+      "category": "text2sql",
+      "message": "统计食品糖分最高的前 10 个产品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.17079800001511
+    },
+    {
+      "sample_id": "food-sql-026",
+      "category": "text2sql",
+      "message": "Osi Industries, LLC 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 66.00000200000977
+    },
+    {
+      "sample_id": "food-sql-027",
+      "category": "text2sql",
+      "message": "统计 Herbs/Spices/Extracts 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 66.7899150000153
+    },
+    {
+      "sample_id": "food-sql-028",
+      "category": "text2sql",
+      "message": "统计蛋白质最高的前 6 个食品产品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.48891999999205
+    },
+    {
+      "sample_id": "food-sql-029",
+      "category": "text2sql",
+      "message": "统计食品分类下的产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 51.279022000016994
+    },
+    {
+      "sample_id": "food-sql-030",
+      "category": "text2sql",
+      "message": "统计食品分类下的产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 46.67152500002203
+    },
+    {
+      "sample_id": "food-sql-031",
+      "category": "text2sql",
+      "message": "Flowers Foods, Inc. 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.72599700000046
+    },
+    {
+      "sample_id": "food-sql-032",
+      "category": "text2sql",
+      "message": "统计 Bread 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 46.66412799997488
+    },
+    {
+      "sample_id": "food-sql-033",
+      "category": "text2sql",
+      "message": "食品产品按分类统计数量并排序",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 35.89112299999897
+    },
+    {
+      "sample_id": "food-sql-034",
+      "category": "text2sql",
+      "message": "食品产品按分类统计数量并排序",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 52.05739299998413
+    },
+    {
+      "sample_id": "food-sql-035",
+      "category": "text2sql",
+      "message": "食品产品按分类统计数量并排序",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 36.55804799996076
+    },
+    {
+      "sample_id": "food-sql-036",
+      "category": "text2sql",
+      "message": "Delhaize America, Inc. 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 42.24044000000049
+    },
+    {
+      "sample_id": "food-sql-037",
+      "category": "text2sql",
+      "message": "统计 Meat/Poultry/Other Animals Unprepared/Unprocessed 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 42.58561000000327
+    },
+    {
+      "sample_id": "food-sql-038",
+      "category": "text2sql",
+      "message": "统计食品糖分最高的前 10 个产品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 46.06183499998906
+    },
+    {
+      "sample_id": "food-sql-039",
+      "category": "text2sql",
+      "message": "统计蛋白质最高的前 6 个食品产品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 53.813228999956664
+    },
+    {
+      "sample_id": "food-sql-040",
+      "category": "text2sql",
+      "message": "查询糖分最高的前 5 个食品商品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 59.53736399999343
+    },
+    {
+      "sample_id": "food-sql-041",
+      "category": "text2sql",
+      "message": "Famous Products Inc. 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 1359.1035759999954
+    },
+    {
+      "sample_id": "food-sql-042",
+      "category": "text2sql",
+      "message": "统计 Popcorn, Peanuts, Seeds & Related Snacks 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.223086999991665
+    },
+    {
+      "sample_id": "food-sql-043",
+      "category": "text2sql",
+      "message": "食品产品按分类统计数量并排序",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 38.50214100003768
+    },
+    {
+      "sample_id": "food-sql-044",
+      "category": "text2sql",
+      "message": "查询糖分最高的前 5 个食品商品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.9147969999899
+    },
+    {
+      "sample_id": "food-sql-045",
+      "category": "text2sql",
+      "message": "食品产品按分类统计数量并排序",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 35.02902700000732
+    },
+    {
+      "sample_id": "food-sql-046",
+      "category": "text2sql",
+      "message": "Vietti Foods Company, Inc. 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 26.673700000003464
+    },
+    {
+      "sample_id": "food-sql-047",
+      "category": "text2sql",
+      "message": "统计 Cheese 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 50.56361200001902
+    },
+    {
+      "sample_id": "food-sql-048",
+      "category": "text2sql",
+      "message": "统计食品糖分最高的前 10 个产品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 47.482070999990356
+    },
+    {
+      "sample_id": "food-sql-049",
+      "category": "text2sql",
+      "message": "统计蛋白质最高的前 6 个食品产品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 53.68278800000326
+    },
+    {
+      "sample_id": "food-sql-050",
+      "category": "text2sql",
+      "message": "统计食品分类下的产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 42.32688299998699
+    },
+    {
+      "sample_id": "food-sql-051",
+      "category": "text2sql",
+      "message": "Turkey Hill Dairy Inc. 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 31.96862999999439
+    },
+    {
+      "sample_id": "food-sql-052",
+      "category": "text2sql",
+      "message": "统计 Crackers & Biscotti 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 1582.3899520000282
+    },
+    {
+      "sample_id": "food-sql-053",
+      "category": "text2sql",
+      "message": "查询糖分最高的前 5 个食品商品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 46.058143000038854
+    },
+    {
+      "sample_id": "food-sql-054",
+      "category": "text2sql",
+      "message": "食品产品按分类统计数量并排序",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 43.763176000027215
+    },
+    {
+      "sample_id": "food-sql-055",
+      "category": "text2sql",
+      "message": "统计食品分类下的产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 36.71866999997064
+    },
+    {
+      "sample_id": "food-sql-056",
+      "category": "text2sql",
+      "message": "Ole Mexican Foods, Inc. 品牌有多少种食品产品？",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 1654.3859149999776
+    },
+    {
+      "sample_id": "food-sql-057",
+      "category": "text2sql",
+      "message": "统计 Oriental, Mexican & Ethnic Sauces 分类下的食品产品数量",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 49.71801899995398
+    },
+    {
+      "sample_id": "food-sql-058",
+      "category": "text2sql",
+      "message": "按蛋白质含量给食品做 top 10 排名",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 43.82339899996168
+    },
+    {
+      "sample_id": "food-sql-059",
+      "category": "text2sql",
+      "message": "统计食品糖分最高的前 10 个产品",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 36.38554799999838
+    },
+    {
+      "sample_id": "food-sql-060",
+      "category": "text2sql",
+      "message": "食品产品按分类统计数量并排序",
+      "expected_route": "text2sql",
+      "actual_route": "text2sql",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql"
+      ],
+      "expected_evidence_sources": [
+        "sql"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 50.70458599999483
+    },
+    {
+      "sample_id": "food-clarify-001",
+      "category": "clarify",
+      "message": "delete from food_products",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": true,
+      "blocked": true,
+      "block_ok": true,
+      "evidence_sources": [
+        "guardrail"
+      ],
+      "expected_evidence_sources": [
+        "guardrail"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.24420099996951
+    },
+    {
+      "sample_id": "food-clarify-002",
+      "category": "clarify",
+      "message": "drop table food_products",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": true,
+      "blocked": true,
+      "block_ok": true,
+      "evidence_sources": [
+        "guardrail"
+      ],
+      "expected_evidence_sources": [
+        "guardrail"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 46.500526999977865
+    },
+    {
+      "sample_id": "food-clarify-003",
+      "category": "clarify",
+      "message": "truncate table food_nutrients",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": true,
+      "blocked": true,
+      "block_ok": true,
+      "evidence_sources": [
+        "guardrail"
+      ],
+      "expected_evidence_sources": [
+        "guardrail"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 38.135831000033704
+    },
+    {
+      "sample_id": "food-clarify-004",
+      "category": "clarify",
+      "message": "update food_products set name='测试'",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": true,
+      "blocked": true,
+      "block_ok": true,
+      "evidence_sources": [
+        "guardrail"
+      ],
+      "expected_evidence_sources": [
+        "guardrail"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 34.88116400001218
+    },
+    {
+      "sample_id": "food-clarify-005",
+      "category": "clarify",
+      "message": "alter table food_products drop column name",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": true,
+      "blocked": true,
+      "block_ok": true,
+      "evidence_sources": [
+        "guardrail"
+      ],
+      "expected_evidence_sources": [
+        "guardrail"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 32.8710619999697
+    },
+    {
+      "sample_id": "food-clarify-006",
+      "category": "clarify",
+      "message": "请执行 delete from food_nutrients",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": true,
+      "blocked": true,
+      "block_ok": true,
+      "evidence_sources": [
+        "guardrail"
+      ],
+      "expected_evidence_sources": [
+        "guardrail"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 45.82689900001924
+    },
+    {
+      "sample_id": "food-clarify-007",
+      "category": "clarify",
+      "message": "帮我 drop table schema_catalog",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": true,
+      "blocked": true,
+      "block_ok": true,
+      "evidence_sources": [
+        "guardrail"
+      ],
+      "expected_evidence_sources": [
+        "guardrail"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 36.7727089999903
+    },
+    {
+      "sample_id": "food-clarify-008",
+      "category": "clarify",
+      "message": "把 food_products 全部删除",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": true,
+      "blocked": true,
+      "block_ok": true,
+      "evidence_sources": [
+        "guardrail"
+      ],
+      "expected_evidence_sources": [
+        "guardrail"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.61708200000203
+    },
+    {
+      "sample_id": "food-clarify-009",
+      "category": "clarify",
+      "message": "执行 update food_nutrients set value=0",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": true,
+      "blocked": true,
+      "block_ok": true,
+      "evidence_sources": [
+        "guardrail"
+      ],
+      "expected_evidence_sources": [
+        "guardrail"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 51.57482100003108
+    },
+    {
+      "sample_id": "food-clarify-010",
+      "category": "clarify",
+      "message": "清空数据库里的食品表",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": true,
+      "blocked": true,
+      "block_ok": true,
+      "evidence_sources": [
+        "guardrail"
+      ],
+      "expected_evidence_sources": [
+        "guardrail"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 40.15283399996861
+    },
+    {
+      "sample_id": "food-clarify-011",
+      "category": "clarify",
+      "message": "说一下",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "clarify"
+      ],
+      "expected_evidence_sources": [
+        "clarify"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 2207.1146609999914
+    },
+    {
+      "sample_id": "food-clarify-012",
+      "category": "clarify",
+      "message": "这个怎么做",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "clarify"
+      ],
+      "expected_evidence_sources": [
+        "clarify"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 4551.343411000005
+    },
+    {
+      "sample_id": "food-clarify-013",
+      "category": "clarify",
+      "message": "这个怎么做",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "clarify"
+      ],
+      "expected_evidence_sources": [
+        "clarify"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 1606.8339679999895
+    },
+    {
+      "sample_id": "food-clarify-014",
+      "category": "clarify",
+      "message": "这个健康吗？",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "clarify"
+      ],
+      "expected_evidence_sources": [
+        "clarify"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 3754.7654319999992
+    },
+    {
+      "sample_id": "food-clarify-015",
+      "category": "clarify",
+      "message": "这个怎么做",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "clarify"
+      ],
+      "expected_evidence_sources": [
+        "clarify"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 1940.2273609999838
+    },
+    {
+      "sample_id": "food-clarify-016",
+      "category": "clarify",
+      "message": "说一下",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "clarify"
+      ],
+      "expected_evidence_sources": [
+        "clarify"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 2359.6513800000025
+    },
+    {
+      "sample_id": "food-clarify-017",
+      "category": "clarify",
+      "message": "它属于什么？",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "clarify"
+      ],
+      "expected_evidence_sources": [
+        "clarify"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 2252.4573990000363
+    },
+    {
+      "sample_id": "food-clarify-018",
+      "category": "clarify",
+      "message": "它属于什么？",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "clarify"
+      ],
+      "expected_evidence_sources": [
+        "clarify"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 3405.769281000005
+    },
+    {
+      "sample_id": "food-clarify-019",
+      "category": "clarify",
+      "message": "它属于什么？",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "clarify"
+      ],
+      "expected_evidence_sources": [
+        "clarify"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 3055.717162999997
+    },
+    {
+      "sample_id": "food-clarify-020",
+      "category": "clarify",
+      "message": "帮我看看",
+      "expected_route": "clarify",
+      "actual_route": "clarify",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "clarify"
+      ],
+      "expected_evidence_sources": [
+        "clarify"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 1,
+      "min_evidence_count": 1,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 1519.5872280000344
+    },
+    {
+      "sample_id": "food-multi-001",
+      "category": "multi",
+      "message": "统计 Richardson Oilseed Products (US) Limited 品牌的食品产品数量，并解释蛋白质有什么作用？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "sql",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 47.668561000023146
+    },
+    {
+      "sample_id": "food-multi-002",
+      "category": "multi",
+      "message": "COUNTRY RANCH ALMOND & RICE CRACKER SNACKS, COUNTRY RANCH 有哪些配料，并解释食品过敏原是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 42.79718500004037
+    },
+    {
+      "sample_id": "food-multi-003",
+      "category": "multi",
+      "message": "统计食品糖分最高的前 5 个产品，并解释糖分是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "sql",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.96091000000024
+    },
+    {
+      "sample_id": "food-multi-004",
+      "category": "multi",
+      "message": "GRANOLA TROPICAL NUTTY BANANA, TROPICAL NUTTY BANANA 有哪些配料，并解释食品过敏原是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 44.22680999999784
+    },
+    {
+      "sample_id": "food-multi-005",
+      "category": "multi",
+      "message": "统计 WELCH FOODS INC. 品牌的食品产品数量，并解释蛋白质有什么作用？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "sql",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 47.350017000042044
+    },
+    {
+      "sample_id": "food-multi-006",
+      "category": "multi",
+      "message": "PESTO SAUCE 有哪些配料，并解释食品过敏原是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 12132.188292999956
+    },
+    {
+      "sample_id": "food-multi-007",
+      "category": "multi",
+      "message": "统计食品糖分最高的前 5 个产品，并解释糖分是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "sql",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 35.27467199995726
+    },
+    {
+      "sample_id": "food-multi-008",
+      "category": "multi",
+      "message": "ITALIAN SAUSAGE 有哪些配料，并解释食品过敏原是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 41.79736500003628
+    },
+    {
+      "sample_id": "food-multi-009",
+      "category": "multi",
+      "message": "统计 Brakebush Brothers 品牌的食品产品数量，并解释蛋白质有什么作用？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "sql",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 37.02908100001423
+    },
+    {
+      "sample_id": "food-multi-010",
+      "category": "multi",
+      "message": "SPICY BUFFALO STYLE CHICKEN STRIPS PREMIUM CHICKEN BREAST, SPICY BUFFALO STYLE CHICKEN STRIPS 有哪些配料，并解释食品过敏原是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 36.1754479999945
+    },
+    {
+      "sample_id": "food-multi-011",
+      "category": "multi",
+      "message": "统计食品糖分最高的前 5 个产品，并解释糖分是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "sql",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 39.589385999988735
+    },
+    {
+      "sample_id": "food-multi-012",
+      "category": "multi",
+      "message": "OLD FASHIONED APPLE PIE, APPLE 有哪些配料，并解释食品过敏原是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 11139.950000999988
+    },
+    {
+      "sample_id": "food-multi-013",
+      "category": "multi",
+      "message": "统计 Daily's Premium Meats 品牌的食品产品数量，并解释蛋白质有什么作用？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "sql",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 49.93829000000005
+    },
+    {
+      "sample_id": "food-multi-014",
+      "category": "multi",
+      "message": "YELLOW MUSTARD, YELLOW 有哪些配料，并解释食品过敏原是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 34.28621099999418
+    },
+    {
+      "sample_id": "food-multi-015",
+      "category": "multi",
+      "message": "统计食品糖分最高的前 5 个产品，并解释糖分是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "sql",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 38.929972000005364
+    },
+    {
+      "sample_id": "food-multi-016",
+      "category": "multi",
+      "message": "ORIGINAL APPLE CHIPS, ORIGINAL 有哪些配料，并解释食品过敏原是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 27.100963000009415
+    },
+    {
+      "sample_id": "food-multi-017",
+      "category": "multi",
+      "message": "统计 Dr. Praeger's Sensible Foods, Inc. 品牌的食品产品数量，并解释蛋白质有什么作用？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "sql",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 30.331437999961963
+    },
+    {
+      "sample_id": "food-multi-018",
+      "category": "multi",
+      "message": "STRAWBERRY ORGANIC TWISTED FRUIT SNACK, STRAWBERRY 有哪些配料，并解释食品过敏原是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 27.146692000030725
+    },
+    {
+      "sample_id": "food-multi-019",
+      "category": "multi",
+      "message": "统计食品糖分最高的前 5 个产品，并解释糖分是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "sql",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "sql",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 27.146297000001596
+    },
+    {
+      "sample_id": "food-multi-020",
+      "category": "multi",
+      "message": "REFRIED PINTO BEANS WITH CHIPOTLE, CHIPOTLE 有哪些配料，并解释食品过敏原是什么意思？",
+      "expected_route": "multi",
+      "actual_route": "multi",
+      "route_ok": true,
+      "should_block": false,
+      "blocked": false,
+      "block_ok": true,
+      "evidence_sources": [
+        "graph",
+        "kb",
+        "kb",
+        "kb",
+        "kb",
+        "kb"
+      ],
+      "expected_evidence_sources": [
+        "graph",
+        "kb"
+      ],
+      "evidence_source_ok": true,
+      "evidence_count": 6,
+      "min_evidence_count": 2,
+      "min_evidence_ok": true,
+      "expected_answer_contains": [],
+      "answer_contains_ok": true,
+      "citation_ok": true,
+      "has_evidence": true,
+      "route_only": false,
+      "failure_reasons": [],
+      "latency_ms": 10538.130291999949
+    }
+  ]
+}

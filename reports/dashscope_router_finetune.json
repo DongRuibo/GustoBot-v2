@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-05-26T10:55:55.641170+00:00",
+  "dry_run": false,
+  "base_url": "https://dashscope.aliyuncs.com/api/v1",
+  "status": "ok",
+  "operation": "status",
+  "response": {
+    "job_id": "ft-202605261632-ecbb",
+    "job_name": "ft-202605261632-ecbb",
+    "status": "SUCCEEDED",
+    "finetuned_output": "qwen3-8b-ft-202605261632-ecbb",
+    "model": "qwen3-8b",
+    "base_model": "qwen3-8b",
+    "training_file_ids": [
+      "279131b8-3df2-4e04-9260-43fa7a936445"
+    ],
+    "validation_file_ids": [
+      "20fc0b1b-3dbd-4e99-b16c-572feba9cc1f"
+    ],
+    "hyper_parameters": {
+      "n_epochs": 3,
+      "batch_size": 16,
+      "max_length": 8192,
+      "learning_rate": "1.6e-5"
+    },
+    "training_type": "sft",
+    "create_time": "2026-05-26 16:32:46",
+    "end_time": "2026-05-26 17:36:45",
+    "model_name": "ft-202605261632-ecbb",
+    "max_output_cnt": 3,
+    "output_cnt": 3,
+    "charge_type": "token",
+    "priority": "L3"
+  },
+  "state_updates": {
+    "job_id": "ft-202605261632-ecbb",
+    "job_status": "SUCCEEDED",
+    "finetuned_output": "qwen3-8b-ft-202605261632-ecbb"
+  }
+}

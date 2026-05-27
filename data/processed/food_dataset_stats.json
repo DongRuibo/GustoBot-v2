@@ -1,0 +1,19 @@
+{
+  "product_count": 15522,
+  "nutrient_row_count": 215321,
+  "graph_node_count": 15777,
+  "graph_edge_count": 74355,
+  "kb_document_count": 2406,
+  "source_counts": {
+    "usda_branded": 7443,
+    "usda_foundation": 377,
+    "usda_sr_legacy": 7702
+  },
+  "products_output": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\products.csv",
+  "nutrients_output": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\nutrients.csv",
+  "graph_nodes_output": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\graph_nodes.csv",
+  "graph_edges_output": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\graph_edges.csv",
+  "kb_documents_output": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\kb_documents.jsonl",
+  "manifest_output": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\dataset_manifest.json",
+  "status": "ok"
+}

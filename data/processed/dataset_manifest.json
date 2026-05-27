@@ -1,0 +1,87 @@
+{
+  "status": "ok",
+  "raw_root": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\raw\\external",
+  "output_dir": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed",
+  "product_count": 15522,
+  "nutrient_row_count": 215321,
+  "graph_node_count": 15777,
+  "graph_edge_count": 74355,
+  "kb_document_count": 2406,
+  "field_missing_rate": {
+    "brand": 0.5205,
+    "category": 0.0,
+    "ingredients_text": 0.5205,
+    "energy_kcal": 0.0048,
+    "protein": 0.0023,
+    "fat": 0.0027,
+    "carbohydrates": 0.005,
+    "sugars": 0.1634,
+    "salt": 0.009
+  },
+  "source_counts": {
+    "usda_branded": 7443,
+    "usda_foundation": 377,
+    "usda_sr_legacy": 7702
+  },
+  "source_ratio": {
+    "usda_branded": 0.4795,
+    "usda_foundation": 0.0243,
+    "usda_sr_legacy": 0.4962
+  },
+  "source_inputs": [
+    {
+      "name": "usda_foundation",
+      "path": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\raw\\external\\usda\\foundation_food_csv_2026-04-30",
+      "selected_count": 395,
+      "food_row_count": 395,
+      "product_count": 377
+    },
+    {
+      "name": "usda_sr_legacy",
+      "path": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\raw\\external\\usda\\sr_legacy_food_csv_2018-04",
+      "selected_count": 7793,
+      "food_row_count": 7793,
+      "product_count": 7793
+    },
+    {
+      "name": "usda_branded",
+      "path": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\raw\\external\\usda\\FoodData_Central_branded_food_csv_2026-04-30.zip",
+      "selected_count": 8000,
+      "food_row_count": 8000,
+      "product_count": 7997
+    }
+  ],
+  "foodon": {
+    "path": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\raw\\external\\foodon\\foodon-synonyms.tsv",
+    "exists": true,
+    "raw_rows": 109436,
+    "term_count": 1200,
+    "edge_count": 1198,
+    "alias_count": 182,
+    "owl": {
+      "path": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\raw\\external\\foodon\\foodon.owl",
+      "exists": true,
+      "bytes": 40429965
+    }
+  },
+  "limits": {
+    "sr_limit": 8000,
+    "branded_limit": 8000,
+    "graph_product_limit": 12000,
+    "graph_max_ingredients": 3,
+    "max_kb_products": 2000,
+    "max_foodon_terms": 1200,
+    "max_foodon_docs": 400
+  },
+  "outputs": {
+    "food_products": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\food_products.csv",
+    "food_nutrients": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\food_nutrients.csv",
+    "kb_documents": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\kb_documents.jsonl",
+    "graph_nodes": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\graph_nodes.csv",
+    "graph_edges": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\graph_edges.csv",
+    "dataset_manifest": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\dataset_manifest.json",
+    "food_dataset_stats": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\food_dataset_stats.json",
+    "products_alias": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\products.csv",
+    "nutrients_alias": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\nutrients.csv"
+  }
+}

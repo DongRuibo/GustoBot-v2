@@ -1,0 +1,15 @@
+{
+  "status": "samples_generated_not_evaluated",
+  "eval_samples": 210,
+  "router_sft": {
+    "train": 400,
+    "dev": 50,
+    "test": 50
+  },
+  "answer_sft": {
+    "train": 160,
+    "dev": 20,
+    "test": 20
+  },
+  "next_command": "python scripts/evaluate.py --samples E:\\大模型\\项目实战\\GustoBot-v2\\data\\eval\\food_eval.jsonl --output reports/eval_after_food_data.json"
+}

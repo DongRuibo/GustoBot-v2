@@ -1,0 +1,79 @@
+# GustoBot-v2 本地工程化部署编排。
+# 默认启动 FastAPI、PostgreSQL+pgvector、Neo4j 和 Redis。
+# 结构化查询统一走 PostgreSQL 只读链路。
+services:
+  api:
+    build: .
+    container_name: gustobot-v2-api
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    environment:
+      GUSTOBOT_ENV: docker
+      GUSTOBOT_POSTGRES_DSN: postgresql://gustobot:gustobot@postgres:5432/gustobot
+      GUSTOBOT_TEXT2SQL_POSTGRES_DSN: postgresql://gustobot:gustobot@postgres:5432/gustobot
+      GUSTOBOT_TEXT2SQL_SCHEMA_TABLE: ${GUSTOBOT_TEXT2SQL_SCHEMA_TABLE:-schema_catalog}
+      GUSTOBOT_KB_PGVECTOR_TABLE: ${GUSTOBOT_KB_PGVECTOR_TABLE:-kb_chunks}
+      GUSTOBOT_KB_EMBEDDING_DIMENSION: ${GUSTOBOT_KB_EMBEDDING_DIMENSION:-1024}
+      GUSTOBOT_NEO4J_URI: bolt://neo4j:7687
+      GUSTOBOT_NEO4J_USERNAME: neo4j
+      GUSTOBOT_NEO4J_PASSWORD: gustobotneo4j
+      GUSTOBOT_REDIS_URL: redis://redis:6379/0
+      GUSTOBOT_TRACE_LOG_PATH: /app/logs/traces.jsonl
+      GUSTOBOT_UPLOAD_DIR: /app/data/uploads
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    depends_on:
+      - postgres
+      - neo4j
+      - redis
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: gustobot-v2-postgres
+    environment:
+      POSTGRES_USER: gustobot
+      POSTGRES_PASSWORD: gustobot
+      POSTGRES_DB: gustobot
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/00_init.sql
+
+  neo4j:
+    image: neo4j:5.18
+    container_name: gustobot-v2-neo4j
+    environment:
+      NEO4J_AUTH: neo4j/gustobotneo4j
+    ports:
+      - "17474:7474"
+      - "17687:7687"
+    volumes:
+      - neo4j_data:/data
+
+  redis:
+    image: redis:7
+    container_name: gustobot-v2-redis
+    ports:
+      - "6379:6379"
+
+  web:
+    image: node:20-alpine
+    container_name: gustobot-v2-web
+    working_dir: /app
+    volumes:
+      - ./web:/app
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
+  neo4j_data:

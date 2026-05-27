@@ -1,0 +1,107 @@
+{
+  "status": "ok",
+  "seed": 20260526,
+  "inputs": {
+    "eval_samples": "/app/data/eval/food_eval.jsonl",
+    "eval_report": "/app/data/eval/eval_after_food_data.json"
+  },
+  "outputs": {
+    "router_train": "/app/data/sft/router_train.jsonl",
+    "router_dev": "/app/data/sft/router_dev.jsonl",
+    "router_test": "/app/data/sft/router_test.jsonl",
+    "answer_train": "/app/data/sft/answer_train.jsonl",
+    "answer_dev": "/app/data/sft/answer_dev.jsonl",
+    "answer_test": "/app/data/sft/answer_test.jsonl",
+    "report": "/app/data/sft/sft_food_generation.json"
+  },
+  "eval": {
+    "sample_count": 230,
+    "report_total": 230,
+    "metrics": {
+      "router_accuracy": 1.0,
+      "evidence_source_coverage_rate": 1.0,
+      "citation_coverage_rate": 1.0,
+      "dangerous_input_block_accuracy": 1.0
+    },
+    "validation": {
+      "checks": [
+        {
+          "metric": "router_accuracy",
+          "value": 1.0,
+          "threshold": 0.85,
+          "ok": true
+        },
+        {
+          "metric": "evidence_source_coverage_rate",
+          "value": 1.0,
+          "threshold": 0.8,
+          "ok": true
+        },
+        {
+          "metric": "citation_coverage_rate",
+          "value": 1.0,
+          "threshold": 0.9,
+          "ok": true
+        },
+        {
+          "metric": "dangerous_input_block_accuracy",
+          "value": 1.0,
+          "threshold": 1.0,
+          "ok": true
+        }
+      ],
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "router_sft": {
+    "total": 800,
+    "splits": {
+      "train": 640,
+      "dev": 80,
+      "test": 80
+    },
+    "route_counts": {
+      "clarify": 67,
+      "general": 38,
+      "graphrag": 220,
+      "kb": 210,
+      "multi": 73,
+      "text2sql": 192
+    }
+  },
+  "answer_sft": {
+    "total": 300,
+    "splits": {
+      "train": 240,
+      "dev": 30,
+      "test": 30
+    },
+    "route_counts": {
+      "graphrag": 82,
+      "kb": 82,
+      "multi": 82,
+      "text2sql": 54
+    },
+    "evidence_source_counts": {
+      "graph": 82,
+      "kb": 248,
+      "sql": 66
+    },
+    "workflow_candidate_count": 180,
+    "workflow_success_count": 180,
+    "workflow_failure_count": 0,
+    "skipped": {
+      "no_citeable_evidence": 1
+    },
+    "failures_preview": [],
+    "generation_mode_counts": {
+      "evidence_summary": 209,
+      "workflow_answer": 91
+    }
+  },
+  "notes": [
+    "Router SFT 来自正式 food_eval.jsonl 的标签和问题改写。",
+    "Answer SFT 通过当前 workflow 重新采集 Evidence，只保留含可引用 source_id 的样本。"
+  ]
+}

@@ -1,0 +1,13 @@
+product_id,nutrient_name,value,unit,source
+sample:oat_milk,energy_kcal,58,kcal,sample
+sample:oat_milk,protein,1.2,g,sample
+sample:oat_milk,fat,1.5,g,sample
+sample:oat_milk,carbohydrates,9,g,sample
+sample:oat_milk,sugars,3.2,g,sample
+sample:oat_milk,salt,0.12,g,sample
+sample:yogurt,energy_kcal,97,kcal,sample
+sample:yogurt,protein,9,g,sample
+sample:yogurt,fat,5,g,sample
+sample:yogurt,carbohydrates,3.6,g,sample
+sample:yogurt,sugars,3.6,g,sample
+sample:yogurt,salt,0.1,g,sample

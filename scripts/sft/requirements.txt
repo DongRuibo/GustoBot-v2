@@ -1,0 +1,19 @@
+# LLaMA-Factory 本地微调依赖
+# ============================
+# 安装顺序：先装 PyTorch (CUDA)，再装本文件
+
+# PyTorch (根据 CUDA 版本选择)
+# CUDA 12.4: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+# CUDA 12.1: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# LLaMA-Factory (包含 transformers, peft, trl 等)
+llamafactory[torch]>=0.9.0
+
+# vLLM 部署
+vllm>=0.8.0
+
+# 量化支持
+bitsandbytes>=0.45.0
+
+# 可选：DeepSpeed 多卡训练
+# deepspeed>=0.15.0

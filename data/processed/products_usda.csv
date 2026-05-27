@@ -1,0 +1,3 @@
+product_id,name,brand,category,country,ingredients_text,allergens,energy_kcal,protein,fat,carbohydrates,sugars,salt,source
+sample:oat_milk,燕麦奶,示例品牌,Plant-based drinks,China,"水, 燕麦, 菜籽油, 海盐",gluten,58,1.2,1.5,9,3.2,0.12,sample
+sample:yogurt,Greek Yogurt,Demo Dairy,Yogurts,United States,"milk, cream, live cultures",milk,97,9,5,3.6,3.6,0.1,sample

@@ -1,0 +1,47 @@
+"""GraphRAG 白名单路径模板。
+
+这个模块只保存模板标识和意图映射，具体执行由 GraphStore 完成。
+后续即使加入 LLM Planner，也只能选择这里登记过的 template_id。
+"""
+
+from __future__ import annotations
+
+from app.graphrag.models import GraphIntent
+
+
+RECIPE_DETAIL_TEMPLATE = "recipe_detail_v1"
+RECIPE_INGREDIENTS_TEMPLATE = "recipe_ingredients_v1"
+RECIPE_INGREDIENT_AMOUNT_TEMPLATE = "recipe_ingredient_amount_v1"
+RECIPE_STEPS_TEMPLATE = "recipe_steps_v1"
+RECIPE_TOOLS_TEMPLATE = "recipe_tools_v1"
+INGREDIENT_TO_RECIPES_TEMPLATE = "ingredient_to_recipes_v1"
+CUISINE_TO_RECIPES_TEMPLATE = "cuisine_to_recipes_v1"
+COMMON_INGREDIENTS_TEMPLATE = "common_ingredients_v1"
+PRODUCT_DETAIL_TEMPLATE = "product_detail_v1"
+PRODUCT_INGREDIENTS_TEMPLATE = "product_ingredients_v1"
+PRODUCT_ALLERGENS_TEMPLATE = "product_allergens_v1"
+PRODUCT_CATEGORY_TEMPLATE = "product_category_v1"
+ALLERGEN_TO_PRODUCTS_TEMPLATE = "allergen_to_products_v1"
+DIRECT_NEIGHBORS_TEMPLATE = "direct_neighbors_v1"
+
+
+TEMPLATE_INTENTS = {
+    RECIPE_DETAIL_TEMPLATE: GraphIntent.RECIPE_DETAIL,
+    RECIPE_INGREDIENTS_TEMPLATE: GraphIntent.RECIPE_INGREDIENTS,
+    RECIPE_INGREDIENT_AMOUNT_TEMPLATE: GraphIntent.RECIPE_INGREDIENT_AMOUNT,
+    RECIPE_STEPS_TEMPLATE: GraphIntent.RECIPE_STEPS,
+    RECIPE_TOOLS_TEMPLATE: GraphIntent.RECIPE_TOOLS,
+    INGREDIENT_TO_RECIPES_TEMPLATE: GraphIntent.INGREDIENT_TO_RECIPES,
+    CUISINE_TO_RECIPES_TEMPLATE: GraphIntent.CUISINE_TO_RECIPES,
+    COMMON_INGREDIENTS_TEMPLATE: GraphIntent.RECIPE_COMPARE,
+    PRODUCT_DETAIL_TEMPLATE: GraphIntent.PRODUCT_DETAIL,
+    PRODUCT_INGREDIENTS_TEMPLATE: GraphIntent.PRODUCT_INGREDIENTS,
+    PRODUCT_ALLERGENS_TEMPLATE: GraphIntent.PRODUCT_ALLERGENS,
+    PRODUCT_CATEGORY_TEMPLATE: GraphIntent.PRODUCT_CATEGORY,
+    ALLERGEN_TO_PRODUCTS_TEMPLATE: GraphIntent.ALLERGEN_TO_PRODUCTS,
+    DIRECT_NEIGHBORS_TEMPLATE: GraphIntent.UNKNOWN,
+}
+
+
+def is_known_template(template_id: str) -> bool:
+    return template_id in TEMPLATE_INTENTS

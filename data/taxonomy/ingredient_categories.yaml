@@ -1,0 +1,77 @@
+categories:
+  - slug: meat
+    name: 肉类
+    aliases: [肉, 荤菜]
+    source_category_patterns: [肉类]
+    priority: 10
+  - slug: vegetable
+    name: 蔬菜
+    aliases: [素菜, 青蔬]
+    source_category_patterns: [蔬菜]
+    priority: 20
+  - slug: seafood
+    name: 海鲜
+    aliases: [水产, 水产品]
+    source_category_patterns: [海鲜, 水产]
+    priority: 30
+  - slug: pork
+    name: 猪肉
+    aliases: [大肉]
+    parent_slugs: [meat]
+    name_patterns: [猪, 五花肉, 排骨, 肋排, 小排, 仔排, 肘子, 猪肝, 猪腰, 猪心, 肥肠, "^(?!.*[牛羊鸡]).*(里脊|通脊).*"]
+    priority: 40
+  - slug: lean_meat
+    name: 瘦肉
+    aliases: [精瘦肉, 纯瘦肉, 瘦肉类]
+    parent_slugs: [meat]
+    name_patterns: [瘦肉, 精瘦, 纯瘦, 猪肉里脊, 猪里脊, 通脊, "^(?!.*[牛羊鸡]).*里脊.*"]
+    priority: 45
+  - slug: beef
+    name: 牛肉
+    aliases: [肥牛]
+    parent_slugs: [meat]
+    name_patterns: [牛肉, 牛腩, 牛里脊, 牛排, 肥牛, 牛肚, 牛柳, 牛腱]
+    priority: 50
+  - slug: chicken
+    name: 鸡肉
+    aliases: [鸡胸肉, 鸡腿肉]
+    parent_slugs: [meat]
+    name_patterns: [鸡肉, 鸡胸, 鸡腿, 鸡翅, 鸡丁, 鸡柳, 鸡排]
+    priority: 60
+  - slug: fish
+    name: 鱼类
+    aliases: [鱼, 鱼肉]
+    parent_slugs: [seafood]
+    name_patterns: [鱼, 三文鱼, 鳕鱼, 鲈鱼, 草鱼, 鲫鱼, 龙利鱼]
+    priority: 70
+  - slug: shrimp
+    name: 虾类
+    aliases: [虾, 虾仁]
+    parent_slugs: [seafood]
+    name_patterns: [虾, 虾仁, 基围虾, 河虾]
+    priority: 80
+  - slug: leafy_vegetable
+    name: 绿叶菜
+    aliases: [青菜, 叶菜]
+    parent_slugs: [vegetable]
+    name_patterns: [白菜, 小白菜, 上海青, 油菜, 青菜, 菠菜, 生菜, 油麦, 空心菜, 鸡毛菜, 菜心, 茼蒿]
+    priority: 90
+  - slug: mushroom
+    name: 菌菇
+    aliases: [蘑菇, 菇类]
+    parent_slugs: [vegetable]
+    name_patterns: [菇, 蘑菇, 木耳, 银耳]
+    priority: 100
+  - slug: soy_product
+    name: 豆制品
+    aliases: [豆腐类]
+    name_patterns: [豆腐, 豆皮, 腐竹, 千张, 豆干, 豆泡]
+    priority: 110
+  - slug: root_vegetable
+    name: 根茎类蔬菜
+    aliases: [根茎菜]
+    parent_slugs: [vegetable]
+    name_patterns: [土豆, 萝卜, 胡萝卜, 山药, 莲藕, 藕, 红薯, 芋头]
+    priority: 120
+
+assignments: []

@@ -1,0 +1,49 @@
+### LLaMA-Factory QLoRA 训练配置
+### 用法: llamafactory-cli train scripts/sft/train_qlora.yaml
+
+## 模型
+model_name_or_path: Qwen/Qwen3-8B
+
+## 微调方法
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: all
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+
+## 量化 (QLoRA 4-bit)
+quantization_bit: 4
+quantization_method: bitsandbytes
+
+## 数据
+dataset_dir: data/sft/router_training
+dataset: gustobot_router_train
+template: qwen3
+cutoff_len: 512
+
+## 训练超参
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 4
+num_train_epochs: 3
+learning_rate: 2.0e-4
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+weight_decay: 0.01
+max_grad_norm: 1.0
+bf16: true
+flash_attn: auto
+
+## 日志与保存
+logging_steps: 10
+save_steps: 100
+save_total_limit: 3
+output_dir: output/gustobot_router_qlora
+report_to: none
+
+## 验证
+val_size: 0.1
+eval_strategy: steps
+eval_steps: 100
+per_device_eval_batch_size: 4

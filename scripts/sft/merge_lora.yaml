@@ -1,0 +1,10 @@
+### LoRA 权重合并配置
+### 用法: llamafactory-cli export scripts/sft/merge_lora.yaml
+
+model_name_or_path: PLACEHOLDER_BASE_MODEL
+adapter_name_or_path: PLACEHOLDER_LORA_DIR
+template: qwen3
+finetuning_type: lora
+export_dir: PLACEHOLDER_EXPORT_DIR
+export_size: 2
+export_legacy_format: false

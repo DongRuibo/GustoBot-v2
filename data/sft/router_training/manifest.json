@@ -1,0 +1,63 @@
+{
+  "status": "ok",
+  "total": 800,
+  "split_counts": {
+    "train": 640,
+    "dev": 80,
+    "test": 80
+  },
+  "route_counts": {
+    "clarify": 67,
+    "general": 38,
+    "graphrag": 220,
+    "kb": 210,
+    "multi": 73,
+    "text2sql": 192
+  },
+  "outputs": {
+    "train": {
+      "openai_messages": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_openai_train.jsonl",
+      "swift_messages": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_swift_train.jsonl",
+      "dashscope_messages": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_dashscope_train.jsonl",
+      "llamafactory_alpaca": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_llamafactory_train.json"
+    },
+    "dev": {
+      "openai_messages": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_openai_dev.jsonl",
+      "swift_messages": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_swift_dev.jsonl",
+      "dashscope_messages": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_dashscope_dev.jsonl",
+      "llamafactory_alpaca": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_llamafactory_dev.json"
+    },
+    "test": {
+      "openai_messages": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_openai_test.jsonl",
+      "swift_messages": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_swift_test.jsonl",
+      "dashscope_messages": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_dashscope_test.jsonl",
+      "llamafactory_alpaca": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\sft\\router_training\\router_llamafactory_test.json"
+    }
+  },
+  "file_sizes_bytes": {
+    "train": {
+      "openai_messages": 561531,
+      "swift_messages": 561531,
+      "dashscope_messages": 497487,
+      "llamafactory_alpaca": 495629
+    },
+    "dev": {
+      "openai_messages": 70170,
+      "swift_messages": 70170,
+      "dashscope_messages": 62195,
+      "llamafactory_alpaca": 61937
+    },
+    "test": {
+      "openai_messages": 70147,
+      "swift_messages": 70147,
+      "dashscope_messages": 62166,
+      "llamafactory_alpaca": 61913
+    }
+  },
+  "formats": {
+    "openai_messages": "JSONL，每行 messages=[system,user,assistant]，assistant 为 RouteDecision JSON 字符串。",
+    "swift_messages": "JSONL，和 OpenAI messages 相同，供 ms-swift 直接指定 dataset。",
+    "dashscope_messages": "JSONL，每行只保留 messages，供阿里云百炼 fine-tune 上传。",
+    "llamafactory_alpaca": "JSON 数组，字段 system/instruction/input/output，配套 dataset_info.json。"
+  }
+}

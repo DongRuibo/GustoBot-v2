@@ -1,0 +1,47 @@
+# GustoBot-v2 P0 strict override.
+# 只在生产验收时叠加使用；默认 docker-compose.yml 仍保留开发模式。
+services:
+  api:
+    environment:
+      GUSTOBOT_ENV: "prod"
+      GUSTOBOT_STRICT_EXTERNAL_STORES: "true"
+
+      GUSTOBOT_POSTGRES_DSN: "postgresql://gustobot:gustobot@postgres:5432/gustobot"
+      GUSTOBOT_TEXT2SQL_POSTGRES_DSN: "postgresql://gustobot:gustobot@postgres:5432/gustobot"
+      GUSTOBOT_TEXT2SQL_SCHEMA_TABLE: "schema_catalog"
+      GUSTOBOT_KB_PGVECTOR_TABLE: "kb_chunks"
+      GUSTOBOT_NEO4J_URI: "bolt://neo4j:7687"
+      GUSTOBOT_NEO4J_USERNAME: "neo4j"
+      GUSTOBOT_NEO4J_PASSWORD: "gustobotneo4j"
+      GUSTOBOT_REDIS_URL: "redis://redis:6379/0"
+
+      GUSTOBOT_ROUTER_LLM_BASE_URL: "${LLM_BASE_URL:-https://dashscope.aliyuncs.com/compatible-mode/v1}"
+      GUSTOBOT_ROUTER_LLM_API_KEY: "${LLM_API_KEY}"
+      GUSTOBOT_ROUTER_LLM_MODEL: "${LLM_MODEL:-qwen3-max}"
+      GUSTOBOT_TEXT2SQL_LLM_BASE_URL: "${LLM_BASE_URL:-https://dashscope.aliyuncs.com/compatible-mode/v1}"
+      GUSTOBOT_TEXT2SQL_LLM_API_KEY: "${LLM_API_KEY}"
+      GUSTOBOT_TEXT2SQL_LLM_MODEL: "${LLM_MODEL:-qwen3-max}"
+      GUSTOBOT_ANSWER_LLM_BASE_URL: "${LLM_BASE_URL:-https://dashscope.aliyuncs.com/compatible-mode/v1}"
+      GUSTOBOT_ANSWER_LLM_API_KEY: "${LLM_API_KEY}"
+      GUSTOBOT_ANSWER_LLM_MODEL: "${LLM_MODEL:-qwen3-max}"
+
+      GUSTOBOT_VISION_BASE_URL: "${VISION_BASE_URL:-https://dashscope.aliyuncs.com/compatible-mode/v1}"
+      GUSTOBOT_VISION_API_KEY: "${VISION_API_KEY:-}"
+      GUSTOBOT_VISION_MODEL: "${VISION_UNDERSTANDING_MODEL:-qwen3-vl-plus}"
+
+      GUSTOBOT_KB_EMBEDDING_PROVIDER: "openai-compatible"
+      GUSTOBOT_KB_EMBEDDING_BASE_URL: "${EMBEDDING_BASE_URL:-https://dashscope.aliyuncs.com/compatible-mode/v1}"
+      GUSTOBOT_KB_EMBEDDING_API_KEY: "${EMBEDDING_API_KEY:-}"
+      GUSTOBOT_KB_EMBEDDING_MODEL: "text-embedding-v4"
+      GUSTOBOT_KB_EMBEDDING_DIMENSION: "1024"
+
+      GUSTOBOT_KB_RERANK_BASE_URL: "${RERANK_BASE_URL:-https://dashscope.aliyuncs.com/api/v1/services}"
+      GUSTOBOT_KB_RERANK_ENDPOINT: "${RERANK_ENDPOINT:-/rerank/text-rerank/text-rerank}"
+      GUSTOBOT_KB_RERANK_API_KEY: "${RERANK_API_KEY:-}"
+      GUSTOBOT_KB_RERANK_MODEL: "qwen3-rerank"
+      GUSTOBOT_KB_RERANK_FORMAT: "${RERANK_FORMAT:-auto}"
+
+      GUSTOBOT_SMOKE_EXPECT_EMBEDDING_PROVIDER: "openai-compatible"
+      GUSTOBOT_SMOKE_EXPECT_RERANKER_SUCCESS: "true"
+      GUSTOBOT_SMOKE_EXPECT_ANSWER_MODE: "llm"
+      GUSTOBOT_SMOKE_EXPECT_REAL_DATA: "true"

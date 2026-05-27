@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "seed": 20260525,
+  "sample_count": 230,
+  "route_counts": {
+    "clarify": 20,
+    "general": 10,
+    "graphrag": 60,
+    "kb": 60,
+    "multi": 20,
+    "text2sql": 60
+  },
+  "expected_evidence_source_counts": {
+    "clarify": 10,
+    "general": 10,
+    "graph": 70,
+    "guardrail": 10,
+    "kb": 80,
+    "sql": 70
+  },
+  "guardrail_sample_count": 10,
+  "sft_generated": false,
+  "inputs": {
+    "products": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\food_products.csv",
+    "nodes": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\graph_nodes.csv",
+    "edges": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\graph_edges.csv",
+    "kb_documents": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\processed\\kb_documents.jsonl"
+  },
+  "outputs": {
+    "eval": "E:\\大模型\\项目实战\\GustoBot-v2\\data\\eval\\food_eval.jsonl",
+    "report": "E:\\大模型\\项目实战\\GustoBot-v2\\reports\\eval_food_generation.json"
+  },
+  "source_data": {
+    "product_count": 15522,
+    "kb_document_count": 2406,
+    "graph_node_count": 15777,
+    "graph_edge_count": 74355,
+    "graph_product_count": 11847,
+    "graph_products_with_category": 11847,
+    "graph_products_with_nutrients": 11826,
+    "graph_products_with_ingredients": 3821,
+    "graph_products_with_allergens": 0
+  }
+}

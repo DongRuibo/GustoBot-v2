@@ -1,0 +1,562 @@
+[
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 89}, \"question\": \"请帮我查一下：PASTEURIZED PROCESS CHEESE FOOD ALTERNATIVE, CHEDDAR SLICES, CHEDDAR SLICES 有哪些配料？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 27}, \"question\": \"用当前食品数据回答：为什么食品分类对检索和统计有帮助？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 89}, \"question\": \"基于食品数据，Cookies, marshmallow, chocolate-coated (includes marshmallow pies) 的营养标签和主要营养素有哪些？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 71}, \"question\": \"请帮我查一下：Macaroni and cheese loaf, chicken, pork and beef 的营养标签和主要营养素有哪些？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 21}, \"question\": \"我想问：统计蛋白质最高的前 6 个食品产品\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 31}, \"question\": \"Flowers Foods, Inc. 品牌有多少种食品产品？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 21}, \"question\": \"基于食品数据，食品产品按分类统计数量并排序\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": true, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 42}, \"question\": \"后台表操作：执行 update food_nutrients set value=0\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.97, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"clarify\", \"slots\": {\"guardrail_required\": true, \"low_context\": false, \"sample_category\": \"clarify\"}}",
+    "route_type": "clarify"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 26}, \"question\": \"统计 Bread 分类下的食品产品数量 请给出依据。\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 47}, \"question\": \"统计 Oriental, Mexican & Ethnic Sauces 分类下的食品产品数量\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 46}, \"question\": \"用当前食品数据回答：介绍一下 FoodOn 类别说明：yogurt food product\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 10}, \"question\": \"请简单回答：你是谁？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.9, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"general\", \"slots\": {\"sample_category\": \"general\"}}",
+    "route_type": "general"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"question\": \"统计食品分类下的产品数量 请给出依据。\", \"input_features\": {\"language\": \"zh\", \"has_attachment\": false, \"attachment_types\": [], \"message_length\": 19, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"contains_relation_intent\": false, \"contains_knowledge_intent\": false, \"is_low_context\": false, \"augmentation_index\": 12}}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 41}, \"question\": \"请帮我查一下：Turkey Hill Dairy Inc. 品牌有多少种食品产品？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"question\": \"糖分和碳水有什么区别？ 请给出依据。\", \"input_features\": {\"language\": \"zh\", \"has_attachment\": false, \"attachment_types\": [], \"message_length\": 18, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"contains_relation_intent\": false, \"contains_knowledge_intent\": false, \"is_low_context\": false, \"augmentation_index\": 6}}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 29}, \"question\": \"基于食品数据，Loquats, raw 属于什么食品类别？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 35}, \"question\": \"Ole Mexican Foods, Inc. 品牌有多少种食品产品？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 12}, \"question\": \"我想了解一下：hello\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.9, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"general\", \"slots\": {\"sample_category\": \"general\"}}",
+    "route_type": "general"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"question\": \"介绍一下 USDA Foundation、SR Legacy 和 Branded 数据的区别\", \"input_features\": {\"language\": \"zh\", \"has_attachment\": false, \"attachment_types\": [], \"message_length\": 46, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"contains_relation_intent\": false, \"contains_knowledge_intent\": true, \"is_low_context\": false, \"augmentation_index\": 8}}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 44}, \"question\": \"用当前食品数据回答：介绍一下 FoodOn 类别说明：wort food product\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 18}, \"question\": \"基于食品数据，食品过敏原是什么意思？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 121}, \"question\": \"基于食品数据，SPICY BUFFALO STYLE CHICKEN STRIPS PREMIUM CHICKEN BREAST, SPICY BUFFALO STYLE CHICKEN STRIPS 有哪些配料，并解释食品过敏原是什么意思？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.84, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"multi\", \"slots\": {\"composite_intent\": true, \"expected_evidence_sources\": [\"graph\", \"kb\"], \"sample_category\": \"multi\"}}",
+    "route_type": "multi"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 44}, \"question\": \"基于食品数据，SMOKEHOUSE ALMONDS, SMOKEHOUSE 有哪些配料？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 44}, \"question\": \"基于食品数据，统计 Cereal Grains and Pasta 分类下的食品产品数量\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 41}, \"question\": \"解释一下 Cooked & Prepared 这类食品的营养标签含义 请给出依据。\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 32}, \"question\": \"请帮我查一下：Kale, raw 的营养标签和主要营养素有哪些？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 42}, \"question\": \"请帮我查一下：USDA FoodData Central 的 fdc_id 是什么？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"question\": \"CHOCOLATE PEANUT BUTTER ICE CREAM, CHOCOLATE PEANUT BUTTER 有哪些配料？ 请给出依据。\", \"input_features\": {\"language\": \"zh\", \"has_attachment\": false, \"attachment_types\": [], \"message_length\": 72, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"contains_relation_intent\": true, \"contains_knowledge_intent\": false, \"is_low_context\": false, \"augmentation_index\": 0}}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 59}, \"question\": \"请帮我查一下：解释一下 American Indian/Alaska Native Foods 这类食品的营养标签含义\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 42}, \"question\": \"基于食品数据，解释一下 Nut & Seed Butters 这类食品的营养标签含义\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 40}, \"question\": \"Schnuck Markets, Inc. 品牌有多少种食品产品？ 请给出依据。\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 18}, \"question\": \"食品过敏原是什么意思？ 请给出依据。\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"question\": \"用当前食品数据回答：USDA FoodData Central 的 fdc_id 是什么？\", \"input_features\": {\"language\": \"zh\", \"has_attachment\": false, \"attachment_types\": [], \"message_length\": 45, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"contains_relation_intent\": false, \"contains_knowledge_intent\": true, \"is_low_context\": false, \"augmentation_index\": 7}}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 72}, \"question\": \"基于食品数据，Soup, clam chowder, new england, canned, ready-to-serve 属于什么食品类别？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 51}, \"question\": \"解释一下 Legumes and Legume Products 这类食品的营养标签含义 请给出依据。\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 21}, \"question\": \"用当前食品数据回答：糖分和碳水有什么区别？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 39}, \"question\": \"BROTH BASE & SEASONING VEGETABLE 有哪些配料？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 42}, \"question\": \"请帮我查一下：统计 Herbs/Spices/Extracts 分类下的食品产品数量\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"question\": \"用当前食品数据回答：介绍一下 FoodOn 类别说明：pickled cabbage food product\", \"input_features\": {\"language\": \"zh\", \"has_attachment\": false, \"attachment_types\": [], \"message_length\": 55, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"contains_relation_intent\": false, \"contains_knowledge_intent\": true, \"is_low_context\": false, \"augmentation_index\": 13}}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 34}, \"question\": \"我想问：Seaboard Foods LLC 品牌有多少种食品产品？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"question\": \"用当前食品数据回答：SPICY BUFFALO STYLE CHICKEN STRIPS PREMIUM CHICKEN BREAST, SPICY BUFFALO STYLE CHICKEN STRIPS 有哪些配料，并解释食品过敏原是什么意思？\", \"input_features\": {\"language\": \"zh\", \"has_attachment\": false, \"attachment_types\": [], \"message_length\": 124, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"contains_relation_intent\": true, \"contains_knowledge_intent\": true, \"is_low_context\": false, \"augmentation_index\": 37}}",
+    "input": "",
+    "output": "{\"confidence\": 0.84, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"multi\", \"slots\": {\"composite_intent\": true, \"expected_evidence_sources\": [\"graph\", \"kb\"], \"sample_category\": \"multi\"}}",
+    "route_type": "multi"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 48}, \"question\": \"我想问：解释一下 Legumes and Legume Products 这类食品的营养标签含义\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 42}, \"question\": \"介绍一下 FoodOn 类别说明：chicken meat food product\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 23}, \"question\": \"CRUSHED TOMATOES 有哪些配料？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 66}, \"question\": \"用当前食品数据回答：解释一下 Frozen Fruit & Fruit Juice Concentrates 这类食品的营养标签含义\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 21}, \"question\": \"食品产品按分类统计数量并排序 请给出依据。\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": true, \"language\": \"zh\", \"message_length\": 6}, \"question\": \"这个健康吗？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.42, \"need_clarification\": true, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"clarify\", \"slots\": {\"guardrail_required\": false, \"low_context\": true, \"sample_category\": \"clarify\"}}",
+    "route_type": "clarify"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 42}, \"question\": \"基于食品数据，ORANGE CHICKEN FRIED RICE 属于什么食品类别？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 41}, \"question\": \"基于食品数据，Turkey Hill Dairy Inc. 品牌有多少种食品产品？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 75}, \"question\": \"基于食品数据，APPLE PIE LIGHT PROBIOTIC BLENDED NONFAT YOGURT, APPLE PIE 属于什么食品类别？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 56}, \"question\": \"我想问：Richardson Oilseed Products (US) Limited 品牌有多少种食品产品？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 89}, \"question\": \"基于食品数据，PASTEURIZED PROCESS CHEESE FOOD ALTERNATIVE, CHEDDAR SLICES, CHEDDAR SLICES 有哪些配料？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 73}, \"question\": \"统计 Richardson Oilseed Products (US) Limited 品牌的食品产品数量，并解释蛋白质有什么作用？ 请给出依据。\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.84, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"multi\", \"slots\": {\"composite_intent\": true, \"expected_evidence_sources\": [\"sql\", \"kb\"], \"sample_category\": \"multi\"}}",
+    "route_type": "multi"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 68}, \"question\": \"基于食品数据，Alcoholic beverage, wine, table, white, Pinot Blanc 属于什么食品类别？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 27}, \"question\": \"介绍一下 FoodOn 类别和同义词说明 请给出依据。\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 54}, \"question\": \"我想问：解释一下 Oriental, Mexican & Ethnic Sauces 这类食品的营养标签含义\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 115}, \"question\": \"我想问：Beef, rib, small end (ribs 10-12), separable lean and fat, trimmed to 0\\\" fat, select, cooked, broiled 属于什么食品类别？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 59}, \"question\": \"基于食品数据，解释一下 American Indian/Alaska Native Foods 这类食品的营养标签含义\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 38}, \"question\": \"我想问：介绍一下 FoodOn 类别说明：wort food product\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 44}, \"question\": \"用当前食品数据回答：解释一下 Cooked & Prepared 这类食品的营养标签含义\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 70}, \"question\": \"请帮我查一下：统计 Meat/Poultry/Other Animals Unprepared/Unprocessed 分类下的食品产品数量\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 49}, \"question\": \"请帮我查一下：介绍一下 FoodOn 类别说明：chicken meat food product\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 49}, \"question\": \"基于食品数据，解释一下 Sausages, Hotdogs & Brats 这类食品的营养标签含义\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 57}, \"question\": \"基于食品数据，SHOPRITE, STUFFING MIX, CHICKEN, CHICKEN 属于什么食品类别？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 39}, \"question\": \"基于食品数据，VANILLA WAFER, VANILLA 属于什么食品类别？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 73}, \"question\": \"基于食品数据，统计 Richardson Oilseed Products (US) Limited 品牌的食品产品数量，并解释蛋白质有什么作用？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.84, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"multi\", \"slots\": {\"composite_intent\": true, \"expected_evidence_sources\": [\"sql\", \"kb\"], \"sample_category\": \"multi\"}}",
+    "route_type": "multi"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 44}, \"question\": \"请帮我查一下：SMOKEHOUSE ALMONDS, SMOKEHOUSE 有哪些配料？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 71}, \"question\": \"请帮我查一下：HOT GREEN CURRY AUTHENTIC PASTE, HOT GREEN CURRY 的营养标签和主要营养素有哪些？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 37}, \"question\": \"SMOKEHOUSE ALMONDS, SMOKEHOUSE 有哪些配料？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 51}, \"question\": \"我想问：统计 Oriental, Mexican & Ethnic Sauces 分类下的食品产品数量\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 27}, \"question\": \"按蛋白质含量给食品做 top 10 排名 请给出依据。\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 40}, \"question\": \"我想问：介绍一下 FoodOn 类别说明：yogurt food product\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 71}, \"question\": \"请帮我查一下：Mung beans, mature seeds, sprouted, cooked, stir-fried 属于什么食品类别？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 46}, \"question\": \"请帮我查一下：BROTH BASE & SEASONING VEGETABLE 有哪些配料？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": true, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 34}, \"question\": \"请帮我查一下：解释一下 Fast Foods 这类食品的营养标签含义\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.86, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"kb\", \"slots\": {\"knowledge_intent\": true, \"sample_category\": \"kb\"}}",
+    "route_type": "kb"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 105}, \"question\": \"基于食品数据，SUBWAY, steak & cheese sub on white bread with American cheese, lettuce and tomato 的营养标签和主要营养素有哪些？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 60}, \"question\": \"SRIRACHA HOT CHILI SAUCE, SRIRACHA HOT CHILI 的营养标签和主要营养素有哪些？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": true, \"contains_sql_mutation\": false, \"contains_statistical_intent\": false, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 41}, \"question\": \"我想问：SMOKEHOUSE ALMONDS, SMOKEHOUSE 有哪些配料？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.87, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"graphrag\", \"slots\": {\"relation_intent\": true, \"sample_category\": \"graphrag\"}}",
+    "route_type": "graphrag"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 40}, \"question\": \"用当前食品数据回答：统计 Spices and Herbs 分类下的食品产品数量\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  },
+  {
+    "system": "你是 GustoBot-v2 的结构化 Router。",
+    "instruction": "{\"input_features\": {\"attachment_types\": [], \"contains_knowledge_intent\": false, \"contains_relation_intent\": false, \"contains_sql_mutation\": false, \"contains_statistical_intent\": true, \"has_attachment\": false, \"is_low_context\": false, \"language\": \"zh\", \"message_length\": 35}, \"question\": \"我想问：Osi Industries, LLC 品牌有多少种食品产品？\"}",
+    "input": "",
+    "output": "{\"confidence\": 0.88, \"need_clarification\": false, \"reason\": \"食品数据底座 Router SFT 样本。\", \"route_type\": \"text2sql\", \"slots\": {\"analysis_intent\": true, \"sample_category\": \"text2sql\"}}",
+    "route_type": "text2sql"
+  }
+]

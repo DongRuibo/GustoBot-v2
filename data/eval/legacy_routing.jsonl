@@ -1,0 +1,12 @@
+{"sample_id":"legacy-general-hello","category":"legacy-routing","message":"你好","expected_route":"general","route_only":true,"min_evidence_count":0}
+{"sample_id":"legacy-clarify-cooking","category":"legacy-routing","message":"我想做菜","expected_route":"clarify","route_only":true,"min_evidence_count":0}
+{"sample_id":"legacy-clarify-this-recipe","category":"legacy-routing","message":"这个菜怎么做","expected_route":"clarify","route_only":true,"min_evidence_count":0}
+{"sample_id":"legacy-kb-history","category":"legacy-routing","message":"宫保鸡丁有什么典故","expected_route":"kb","route_only":true,"min_evidence_count":0}
+{"sample_id":"legacy-kb-technique","category":"legacy-routing","message":"炒青菜怎么保持翠绿","expected_route":"kb","route_only":true,"min_evidence_count":0}
+{"sample_id":"legacy-kb-wellness","category":"legacy-routing","message":"什么菜适合感冒吃","expected_route":"kb","route_only":true,"min_evidence_count":0}
+{"sample_id":"legacy-graph-howto","category":"legacy-routing","message":"红烧肉怎么做","expected_route":"graphrag","route_only":true,"min_evidence_count":0}
+{"sample_id":"legacy-graph-ingredients","category":"legacy-routing","message":"宫保鸡丁需要哪些食材","expected_route":"graphrag","route_only":true,"min_evidence_count":0}
+{"sample_id":"legacy-sql-count","category":"legacy-routing","message":"数据库里有多少道菜","expected_route":"text2sql","route_only":true,"min_evidence_count":0}
+{"sample_id":"legacy-sql-cuisine-rank","category":"legacy-routing","message":"哪个菜系菜谱最多","expected_route":"text2sql","route_only":true,"min_evidence_count":0}
+{"sample_id":"legacy-image-dish","category":"legacy-routing","message":"这是什么菜","expected_route":"graphrag","attachments":[{"type":"image","filename":"legacy-dish.jpg"}],"route_only":true,"min_evidence_count":0}
+{"sample_id":"legacy-file-ingest","category":"legacy-routing","message":"请把这个文件入库","expected_route":"file","attachments":[{"type":"file","filename":"legacy.txt","text":"宫保鸡丁是川菜代表菜。"}],"route_only":true,"min_evidence_count":0}

@@ -1,0 +1,29 @@
+{
+  "gustobot_router_train": {
+    "file_name": "router_llamafactory_train.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system"
+    }
+  },
+  "gustobot_router_dev": {
+    "file_name": "router_llamafactory_dev.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system"
+    }
+  },
+  "gustobot_router_test": {
+    "file_name": "router_llamafactory_test.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system"
+    }
+  }
+}
