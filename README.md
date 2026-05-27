@@ -2,7 +2,7 @@
 
 GustoBot-v2 是一个基于 FastAPI 和 LangGraph 的菜谱领域多路由智能问答系统。项目在 `GustoBot-v2` 中从头搭建，不改动旧的 `GustoBot-develop`。
 
-当前仓库状态：后端已接入 FastAPI + LangGraph 多路由工作流，前端为 Vue 3 + Vite 本地聊天应用；Docker Compose 可同时启动 API、PostgreSQL + pgvector、Neo4j、Redis 和 Web；数据侧已包含 USDA + FoodOn 清洗后的 processed 食品数据、评估集和 Router/Answer SFT 数据。
+当前仓库状态：后端已接入 FastAPI + LangGraph 多路由工作流，前端为 Vue 3 + Vite 本地聊天应用；Docker Compose 可同时启动 API、PostgreSQL + pgvector、Neo4j、Redis 和 Web；数据侧已包含 USDA + FoodOn 清洗后的 processed 食品数据、评估集、Router/Answer SFT 数据和多种 Router 训练导出格式。默认本地模式保留内存库、hash embedding、关键词 reranker、SQLite 等 fallback，便于无外部依赖联调；生产/P0 路径已支持真实 embedding、HTTP reranker、PostgreSQL、Neo4j、Redis 和 strict 外部依赖校验。
 
 ## 当前阶段状态
 
@@ -19,19 +19,22 @@ GustoBot-v2 是一个基于 FastAPI 和 LangGraph 的菜谱领域多路由智能
 - Answer Generator / Answer Guardrails
 - 基础测试
 
-### 第二阶段：KB RAG，已完成最小可运行版本
+### 第二阶段：KB RAG，已完成可运行版本
 
 - 文档切块
-- hash embedding 占位实现
+- 默认 hash embedding fallback，便于本地测试和流程联调
+- OpenAI-compatible embedding provider，可接 bge、text-embedding 或兼容 `/v1/embeddings` 的服务
 - 内存知识库存储，便于本地测试
 - PostgreSQL + pgvector 存储适配器
 - pgvector 相似度检索 SQL
-- 关键词 reranker 占位实现
+- 关键词 reranker fallback
+- HTTP reranker 适配器，可接 bge-reranker、DashScope qwen3-rerank 或兼容 rerank 服务
 - KB Evidence 输出
 - `/api/v1/kb/documents` 文档入库接口
 - `kb_rag_node` 已接入 LangGraph 主流程
+- `GUSTOBOT_ENV=prod` 或 `GUSTOBOT_STRICT_EXTERNAL_STORES=true` 时会阻止静默退回 hash embedding、内存库或关键词 reranker
 
-说明：当前默认使用内存存储。如果配置 `GUSTOBOT_POSTGRES_DSN`，服务会切换到 PostgreSQL + pgvector。当前 embedding 和 reranker 是本地占位实现，后续可替换为 bge、OpenAI-compatible embedding 或 bge-reranker 服务。
+说明：当前默认本地模式使用内存存储、hash embedding 和关键词 reranker，目标是让开发环境开箱可跑；配置 `GUSTOBOT_POSTGRES_DSN`、`GUSTOBOT_KB_EMBEDDING_*` 和 `GUSTOBOT_KB_RERANK_*` 后，会切换到 PostgreSQL + pgvector、真实 embedding 和外部 reranker。
 
 ### 第三阶段：GraphRAG + Text2SQL，已完成最小可运行版本
 
@@ -139,6 +142,8 @@ Router 已保留后续路由类型：
 
 正式评估结果保存在 `reports/eval_after_food_data.json`，当前食品数据闭环的 Router Accuracy、Evidence Source Coverage、Citation Coverage 和危险输入拦截率均为 100%。第一轮未达标报告保留在 `reports/eval_after_food_data_first_run.json`，用于追踪规则修复前后的差异。
 
+说明：`reports/eval_after_food_data.json` 是当前 GitHub 稳定基线。本机可额外生成 Router SFT 对比报告，例如 `reports/eval_router_local_sft.json` 或云端 Router 报告；这类文件用于实验对比，不代表当前默认稳定配置，未纳入本轮 README-only 同步范围。
+
 数据重建和导入入口：
 
 ```powershell
@@ -162,6 +167,15 @@ $env:GUSTOBOT_ROUTER_LLM_TEMPERATURE="0"
 ```
 
 未配置 `GUSTOBOT_ROUTER_LLM_*` 时会兼容读取 `LLM_BASE_URL`、`LLM_API_KEY`、`LLM_MODEL`。路由结果的 `slots` 中会记录 `router_provider`、`router_model`、`fallback_used` 和 `fallback_reason`，便于 trace 排查。
+
+Router SFT 当前定位为可插拔路由后端，而不是替代 KB、GraphRAG 或 Text2SQL。仓库已包含：
+
+- `data/sft/router_*.jsonl`：Router SFT train/dev/test 数据。
+- `data/sft/router_training/`：OpenAI、ms-swift、DashScope、LLaMA-Factory 导出格式。
+- `scripts/data/dashscope_router_finetune.py`：DashScope 微调管理脚本，默认 dry-run，真实上传/训练/部署需显式 `--submit`。
+- `scripts/sft/`：本地 QLoRA、LoRA 合并和 Router 服务部署脚本，适合在有 GPU 的机器上做本地实验。
+
+Router SFT 接回主流程后仍建议通过 `scripts/evaluate.py --samples data/eval/food_eval.jsonl` 做基线对比，重点看 GraphRAG / Text2SQL / KB 的混淆样本，而不是只看单条演示问题。
 
 ## 应用外壳与前端
 
@@ -511,7 +525,17 @@ $env:GUSTOBOT_REDIS_URL="redis://127.0.0.1:6379/0"
 - Router Accuracy
 - Guardrails Block Accuracy
 - Answer Has Evidence Rate
+- Evidence Source Coverage
+- Citation Coverage
+- Failure Reason Counts
+- Route Breakdown
 - E2E Latency P50 / P95
+
+当前稳定基线：
+
+- `reports/eval_after_food_data.json`：食品数据闭环正式评估，Router Accuracy、Evidence Source Coverage、Citation Coverage 和危险输入拦截率均为 100%。
+- `reports/eval_after_food_data_first_run.json`：规则修复前的第一轮报告，用于对比修复收益。
+- 本地 Router SFT 或云端 Router SFT 评估报告属于实验结果，应与稳定基线并排比较；如果低于基线，不应直接替换默认 Router 配置。
 
 ## Docker Compose
 
@@ -695,7 +719,9 @@ pytest
 
 - 扩展食品数据底座规模，补充 Open Food Facts 稳定下载链路
 - 继续打磨 Vision/OCR 提示词、失败重试和图片评估样本
-- 完成 Router SFT 云端部署后的长期对比评估
+- 完成 Router SFT 本地/云端部署后的长期对比评估，沉淀低置信度和失败样本回流机制
 - 补齐旧 `.doc`、复杂扫描 PDF 等边界文件解析能力
 - 引入 sqlglot 等 AST 解析器进一步增强 SQL 校验
-- 增加更完整的跨领域评估样本集
+- 增加 prompt injection、PII、数据外泄和 RAG 文件投毒检测等更完整的 Guardrails 策略
+- 将 `/chat/stream` 从“最终答案切块”升级为真正的工作流事件流或模型 token streaming
+- 增加 route confusion matrix、低置信度样本集、多意图样本和更完整的跨领域评估样本集
