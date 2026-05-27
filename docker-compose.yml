@@ -22,6 +22,10 @@ services:
       GUSTOBOT_REDIS_URL: redis://redis:6379/0
       GUSTOBOT_TRACE_LOG_PATH: /app/logs/traces.jsonl
       GUSTOBOT_UPLOAD_DIR: /app/data/uploads
+      GUSTOBOT_ROUTER_LLM_API_KEY: not-needed
+      GUSTOBOT_GRAPH_PLANNER_LLM_BASE_URL: ${LLM_BASE_URL:-https://dashscope.aliyuncs.com/compatible-mode/v1}
+      GUSTOBOT_GRAPH_PLANNER_LLM_API_KEY: ${LLM_API_KEY:-}
+      GUSTOBOT_GRAPH_PLANNER_LLM_MODEL: ${LLM_MODEL:-qwen3-max}
     volumes:
       - ./logs:/app/logs
       - ./data:/app/data

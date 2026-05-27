@@ -61,10 +61,12 @@ def test_router_food_nutrition_relation_and_explanation_split() -> None:
     relation = route_question("WESSON Vegetable Oil 的营养标签和主要营养素有哪些？", {})
     explanation = route_question("解释一下 Dairy and Egg Products 这类食品的营养标签含义", {})
     field = route_question("USDA FoodData Central 的 fdc_id 是什么？", {})
+    category_relation = route_question("ORANGE CHICKEN FRIED RICE 属于什么食品类别？", {})
 
     assert relation.route_type == RouteType.GRAPHRAG
     assert explanation.route_type == RouteType.KB
     assert field.route_type == RouteType.KB
+    assert category_relation.route_type == RouteType.GRAPHRAG
 
 
 def test_router_pronoun_relation_without_context_clarifies() -> None:

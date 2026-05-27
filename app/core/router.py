@@ -368,12 +368,42 @@ def _router_system_prompt() -> str:
 
 
 def _router_user_prompt(normalized_input: str, input_features: dict[str, Any]) -> str:
-    return (
-        f"用户问题：{normalized_input}\n"
-        f"输入特征：{json.dumps(input_features, ensure_ascii=False)}\n"
-        "请返回 JSON："
-        '{"route_type":"...","confidence":0.0,"reason":"...","slots":{},"need_clarification":false}'
+    enriched_features = _router_llm_input_features(normalized_input, input_features)
+    # Router SFT 的训练格式是 user content 直接放 JSON；运行时保持同分布。
+    return json.dumps(
+        {
+            "input_features": enriched_features,
+            "question": normalized_input,
+        },
+        ensure_ascii=False,
+        sort_keys=True,
     )
+
+
+def _router_llm_input_features(normalized_input: str, input_features: dict[str, Any]) -> dict[str, Any]:
+    # SFT 训练样本包含这些轻量意图特征，运行时也补齐，避免微调模型看到分布外输入。
+    text = normalized_input.strip()
+    lowered = text.lower()
+    attachment_types = list(input_features.get("attachment_types") or [])
+    if input_features.get("has_image") and "image" not in attachment_types:
+        attachment_types.append("image")
+    if input_features.get("has_file") and "file" not in attachment_types:
+        attachment_types.append("file")
+    features = dict(input_features)
+    features.update(
+        {
+            "attachment_types": attachment_types,
+            "contains_knowledge_intent": _has_kb_explanation_intent(text),
+            "contains_relation_intent": _has_food_relation_intent(text) or _has_recipe_howto_intent(text) or _has_ingredient_amount_intent(text),
+            "contains_sql_mutation": bool(re.search(r"\b(delete|drop|truncate|update|insert|alter)\b", lowered)),
+            "contains_statistical_intent": any(keyword in lowered for keyword in TEXT2SQL_KEYWORDS),
+            "has_attachment": bool(attachment_types or input_features.get("has_attachment")),
+            "is_low_context": _is_low_info_question(text),
+            "language": "zh" if re.search(r"[\u4e00-\u9fff]", text) else "en",
+            "message_length": len(text),
+        }
+    )
+    return features
 
 
 def _post_router_llm(config: RouterLLMConfig, payload: dict[str, Any]) -> httpx.Response:
@@ -602,6 +632,8 @@ def _has_food_relation_intent(text: str) -> bool:
         )
     )
     if base_relation:
+        return True
+    if re.search(r"属于.{0,8}(类别|分类)", text):
         return True
     if _has_kb_explanation_intent(text):
         return False
