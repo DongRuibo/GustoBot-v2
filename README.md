@@ -2,6 +2,8 @@
 
 GustoBot-v2 是一个基于 FastAPI 和 LangGraph 的菜谱领域多路由智能问答系统。项目在 `GustoBot-v2` 中从头搭建，不改动旧的 `GustoBot-develop`。
 
+当前仓库状态：后端已接入 FastAPI + LangGraph 多路由工作流，前端为 Vue 3 + Vite 本地聊天应用；Docker Compose 可同时启动 API、PostgreSQL + pgvector、Neo4j、Redis 和 Web；数据侧已包含 USDA + FoodOn 清洗后的 processed 食品数据、评估集和 Router/Answer SFT 数据。
+
 ## 当前阶段状态
 
 ### 第一阶段：主骨架，已完成
@@ -109,6 +111,44 @@ Router 已保留后续路由类型：
 - `猪肉可以做什么菜`：IngredientCategory 上位词泛化到具体食材。
 - `统计一下每个菜系的菜谱数量`：Text2SQL 只读统计查询。
 
+## 当前数据集与数据资产
+
+当前仓库不仅包含菜谱演示数据，也提交了一版可复现实验用的食品数据底座。原始大文件位于 `data/raw/external/`，该目录已被 `.gitignore` 忽略；GitHub 仓库中保留的是清洗后的 processed 数据、评估样本和 SFT 样本。
+
+数据来源：
+
+- USDA Foundation Foods 04/2026：基础食品营养数据。
+- USDA SR Legacy 04/2018：传统标准食品营养数据。
+- USDA Branded Foods 04/2026：品牌商品食品数据。
+- FoodOn 同义词表：食品类别、别名和上位词关系；OWL 原文件只记录在 manifest 中，不作为当前运行时直接解析输入。
+- Open Food Facts 本轮未进入正式 processed 数据；第一版使用 USDA Branded Foods 补足商品食品数据。
+
+当前 processed 数据规模：
+
+| 数据资产 | 文件位置 | 当前规模 | 主要用途 |
+| --- | --- | --- | --- |
+| 食品商品主表 | `data/processed/food_products.csv`、`data/processed/products.csv` | 15522 条商品 | Text2SQL 统计、GraphRAG 产品节点、KB 文档生成 |
+| 营养素长表 | `data/processed/food_nutrients.csv`、`data/processed/nutrients.csv` | 215321 条营养记录 | 营养查询、排序、统计分析 |
+| 图谱节点 | `data/processed/graph_nodes.csv` | 15777 个节点 | Neo4j 商品、配料、过敏原、分类、营养素节点 |
+| 图谱边 | `data/processed/graph_edges.csv` | 74355 条边 | Neo4j 产品-配料、产品-过敏原、产品-分类、产品-营养关系 |
+| KB 文档 | `data/processed/kb_documents.jsonl` | 2406 条文档 | PostgreSQL + pgvector 或内存 KB 检索 |
+| 食品评估集 | `data/eval/food_eval.jsonl` | 230 条样本 | Router、Evidence、引用覆盖率评估 |
+| Router SFT | `data/sft/router_*.jsonl` | 800 条，train/dev/test = 640/80/80 | 训练结构化 Router |
+| Answer SFT | `data/sft/answer_*.jsonl` | 300 条，train/dev/test = 240/30/30 | 训练基于 Evidence 的答案生成 |
+| Router 训练导出 | `data/sft/router_training/` | OpenAI、ms-swift、DashScope、LLaMA-Factory 格式 | 云端或本地 Router SFT |
+
+正式评估结果保存在 `reports/eval_after_food_data.json`，当前食品数据闭环的 Router Accuracy、Evidence Source Coverage、Citation Coverage 和危险输入拦截率均为 100%。第一轮未达标报告保留在 `reports/eval_after_food_data_first_run.json`，用于追踪规则修复前后的差异。
+
+数据重建和导入入口：
+
+```powershell
+python scripts\data\prepare_food_dataset.py --raw-root data\raw\external --sr-limit 8000 --branded-limit 8000 --graph-product-limit 12000 --max-kb-products 2000
+docker compose exec -T api python scripts\data\import_food_dataset.py --products data\processed\food_products.csv --nutrients data\processed\food_nutrients.csv --kb-documents data\processed\kb_documents.jsonl --reset --ingest-kb
+docker compose exec -T api python scripts\data\bootstrap_food_neo4j.py --nodes data\processed\graph_nodes.csv --edges data\processed\graph_edges.csv --reset
+```
+
+更完整的数据准备、评估和 SFT 生成流程见 `docs/DATASET_EXPANSION_PLAN.md` 与 `docs/SFT_DATASET_DESIGN.md`。
+
 ### LLM Router
 
 Router 采用混合模式：图片、文件、问候、低信息和明显统计类问题先由确定性规则处理；其余文本优先调用 OpenAI-compatible LLM 生成结构化 `RouteDecision`。如果 LLM 未配置、超时、返回非法 JSON、未知 route 或低置信度，系统会自动回退到规则 Router。
@@ -123,15 +163,15 @@ $env:GUSTOBOT_ROUTER_LLM_TEMPERATURE="0"
 
 未配置 `GUSTOBOT_ROUTER_LLM_*` 时会兼容读取 `LLM_BASE_URL`、`LLM_API_KEY`、`LLM_MODEL`。路由结果的 `slots` 中会记录 `router_provider`、`router_model`、`fallback_used` 和 `fallback_reason`，便于 trace 排查。
 
-## KB RAG
+## 应用外壳与前端
 
-## 阶段一应用外壳
-
-阶段一补齐了会话、消息历史、上传和本地前端壳，不改变 KB RAG、GraphRAG、Text2SQL 的核心链路。
+当前应用外壳提供会话、消息历史、上传、回答快照和本地前端壳，不改变 KB RAG、GraphRAG、Text2SQL 的核心链路。
 
 - `/api/v1/chat` 会自动创建或复用会话，并返回 `session_id`、`message_id`。
+- `/api/v1/chat/stream` 返回 NDJSON 增量事件，前端用它实现流式回答。
 - `/api/v1/sessions` 提供会话列表、新建、详情、更新、软删除和消息历史查询。
-- `/api/v1/upload/file`、`/api/v1/upload/image` 使用 multipart 上传，并返回可放入 chat/files ingest 的 `upload://{file_id}` 附件。
+- `/api/v1/sessions/{session_id}/snapshots` 提供每轮回答快照，便于回看 Evidence 和 trace。
+- `/api/v1/upload/file`、`/api/v1/upload/image` 使用 multipart 上传，并返回可放入 chat/files ingest 的 `upload://{file_id}` 附件；上传文件也支持读取和删除。
 - `upload://` 只解析服务端已登记文件，不允许业务链路读取任意本地路径。
 - `web/` 是 Vue 3 + Vite + TypeScript 本地聊天应用，默认读取 `VITE_API_BASE_URL`，未设置时通过 Vite proxy 请求 `http://localhost:8000`。
 
@@ -142,6 +182,8 @@ cd web
 npm install
 npm run dev
 ```
+
+## KB RAG
 
 默认本地模式：
 
@@ -347,9 +389,11 @@ $env:GUSTOBOT_ANSWER_LLM_MODEL="your-chat-model"
 ```powershell
 $env:GUSTOBOT_VISION_BASE_URL="http://127.0.0.1:8001/v1"
 $env:GUSTOBOT_VISION_API_KEY="your-api-key"
-$env:GUSTOBOT_VISION_MODEL="your-vision-model"
+$env:GUSTOBOT_VISION_MODEL="qwen3-vl-plus"
 $env:GUSTOBOT_OCR_BASE_URL="http://127.0.0.1:8003/ocr"
 ```
+
+Vision 模型需要支持图片理解和 `image_url` 输入；`qwen-image-*` 是图片生成/编辑模型，不适合这里使用。
 
 ```powershell
 curl -X POST http://127.0.0.1:8000/api/v1/chat `
@@ -472,8 +516,11 @@ $env:GUSTOBOT_REDIS_URL="redis://127.0.0.1:6379/0"
 ## Docker Compose
 
 ```powershell
+Copy-Item .env.example .env
 docker compose up --build
 ```
+
+`.env` 只放本机配置和真实 API Key，不要提交；`.env.example` 保留可公开的占位配置。
 
 包含服务：
 
@@ -481,6 +528,7 @@ docker compose up --build
 - PostgreSQL + pgvector
 - Neo4j
 - Redis
+- Vue 3 + Vite Web 前端
 
 数据库服务都运行在 Docker 中。当前 compose 的默认连接方式：
 
@@ -489,6 +537,7 @@ docker compose up --build
 | PostgreSQL + pgvector | `postgres:5432` | `127.0.0.1:5432` | KB RAG、Text2SQL、Schema Catalog、评估日志 |
 | Neo4j | `neo4j:7687` | `127.0.0.1:17687` | GraphRAG 图数据库 |
 | Redis | `redis:6379` | `127.0.0.1:6379` | 缓存 |
+| Web | `web:5173` | `127.0.0.1:5173` | 本地聊天界面 |
 
 PostgreSQL 会在容器首次初始化时执行：
 
@@ -589,7 +638,8 @@ v2 正式链路不再依赖 MySQL/Milvus/LightRAG。MySQL SQL 文件只作为旧
 
 - embedding：`EMBEDDING_*` 或 `KB_EMBEDDING_*`
 - reranker：`KB_RERANK_*` 或 `RERANK_*`
-- answer LLM：`LLM_*` 或 `GUSTOBOT_ANSWER_LLM_*`
+- Router / Text2SQL / Answer LLM：`LLM_*` 或对应的 `GUSTOBOT_*_LLM_*`
+- Vision：`VISION_*` 或 `GUSTOBOT_VISION_*`
 
 Docker 不再强制把 KB embedding 覆盖成 hash；如果 `.env` 已配置
 `text-embedding-v4`、`qwen3-rerank`、`qwen3-max`，API 容器会走真实服务。
@@ -616,6 +666,19 @@ docker compose run --rm api python scripts/prepare_kb_data.py --reset
 
 `--reset` 会清空当前 KB pgvector 数据后重新入库，适合切换 embedding 模型或维度后使用。
 
+## P0 / DashScope strict 验收
+
+P0 验收路径用于确认生产配置不会静默退回 hash embedding、内存存储、seed 图谱、SQLite、规则 SQL 或关键词 rerank。
+
+```powershell
+docker compose -f docker-compose.yml -f docker-compose.p0.yml up -d --build api
+docker compose -f docker-compose.yml -f docker-compose.p0.yml exec -T api python scripts/check_p0_dashscope_readiness.py
+docker compose -f docker-compose.yml -f docker-compose.p0.yml exec -T api python scripts/p0_failure_injection.py
+docker compose -f docker-compose.yml -f docker-compose.p0.yml exec -T api python scripts/docker_smoke.py --expect-embedding-provider openai-compatible --expect-reranker-success --expect-answer-mode llm --expect-real-data
+```
+
+P0 override 默认使用 DashScope OpenAI-compatible Chat、`text-embedding-v4`、`qwen3-rerank` 和 `qwen3-vl-plus`。图片理解必须使用支持 `image_url` 输入的视觉理解模型，例如 `qwen3-vl-plus`、`qwen-vl-plus` 或 `qwen-vl-max`；`qwen-image-*` 属于图片生成/编辑模型，不能作为 Vision 理解模型。
+
 ## 测试
 
 ```powershell
@@ -630,9 +693,9 @@ pytest
 
 ## 后续扩展
 
-- 使用真实 embedding 服务和 PostgreSQL + pgvector 做端到端部署验证
-- 接入真实 reranker 服务
-- 继续打磨 Vision/OCR 提示词、失败重试和业务评估样本
+- 扩展食品数据底座规模，补充 Open Food Facts 稳定下载链路
+- 继续打磨 Vision/OCR 提示词、失败重试和图片评估样本
+- 完成 Router SFT 云端部署后的长期对比评估
 - 补齐旧 `.doc`、复杂扫描 PDF 等边界文件解析能力
 - 引入 sqlglot 等 AST 解析器进一步增强 SQL 校验
-- 增加更完整的评估样本集
+- 增加更完整的跨领域评估样本集
