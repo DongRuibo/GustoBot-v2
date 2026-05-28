@@ -103,7 +103,7 @@ Router 已保留后续路由类型：
 ### 关键问题与解决方案
 
 - 食材上位词泛化：旧逻辑只匹配具体 `Ingredient`，例如“猪肉”无法自动关联“猪排骨、猪肉里脊、五花肉”。当前已升级为 `IngredientCategory` 上位词图谱，通过 `BELONGS_TO_CATEGORY` 和 `IS_A` 查询“类别 -> 具体食材 -> 菜谱”。
-- 路由意图冲突：“多少”既可能是统计，也可能是食材用量。当前 Router 会优先识别“菜谱 + 食材 + 用量/放多少/几克/几勺”为 GraphRAG，保留“菜系有多少道菜谱”等统计问题走 Text2SQL。
+- 路由意图冲突：“多少”既可能是统计，也可能是食材用量。当前 Router 在配置 LLM/SFT 时由模型做主体判断，规则只作为轻量特征和失败兜底；未配置模型时，规则兜底仍会优先把“菜谱 + 食材 + 用量/放多少/几克/几勺”识别为 GraphRAG，并保留“菜系有多少道菜谱”等统计问题走 Text2SQL。
 - 生产环境可信度：`GUSTOBOT_ENV=prod` 时建议开启严格外部存储校验，避免服务看似启动成功但实际退回内存种子数据。
 
 ### 演示问题清单
@@ -156,7 +156,7 @@ docker compose exec -T api python scripts\data\bootstrap_food_neo4j.py --nodes d
 
 ### LLM Router
 
-Router 采用混合模式：图片、文件、问候、低信息和明显统计类问题先由确定性规则处理；其余文本优先调用 OpenAI-compatible LLM 生成结构化 `RouteDecision`。如果 LLM 未配置、超时、返回非法 JSON、未知 route 或低置信度，系统会自动回退到规则 Router。
+Router 采用 `hard rules + LLM/SFT Router + rule fallback` 的混合模式：图片、文件、明确问候和低信息输入先由确定性规则处理；KB / GraphRAG / Text2SQL 等主体业务文本优先调用 OpenAI-compatible 或 DashScope LLM/SFT 生成结构化 `RouteDecision`。如果 LLM 未配置、超时、返回非法 JSON、未知 route 或低置信度，系统会自动回退到规则 Router。
 
 ```powershell
 $env:GUSTOBOT_ROUTER_LLM_ENABLED="true"

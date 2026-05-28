@@ -1,8 +1,8 @@
 """结构化 Router 模块。
 
 Router 根据标准化后的用户输入和附件特征输出 RouteDecision。当前实现采用混合路由：
-确定性规则先处理图片、文件、问候、低信息和明显统计问题；其余文本优先交给
-OpenAI-compatible 或 DashScope 原生 LLM 判断，LLM 不可用或输出非法时回退到规则 Router。
+确定性规则只处理图片、文件、问候和低信息等高确定性场景；主体业务文本优先交给
+OpenAI-compatible 或 DashScope 原生 LLM/SFT 判断，LLM 不可用或输出非法时回退到规则 Router。
 """
 
 from __future__ import annotations
@@ -120,7 +120,7 @@ def route_question(
     normalized_input: str,
     input_features: dict[str, Any],
 ) -> RouteDecision:
-    """统一 Router 入口：确定性规则 -> LLM Router -> 规则兜底。"""
+    """统一 Router 入口：硬规则 -> LLM/SFT Router -> 规则兜底。"""
     text = normalized_input.strip()
     deterministic = deterministic_route_question(text, input_features)
     if deterministic is not None:
@@ -140,16 +140,6 @@ def route_question(
         decision = llm_route_question(text, input_features, llm_config)
         if decision.confidence < settings.route_confidence_threshold:
             raise RouterLLMError(f"llm_low_confidence:{decision.confidence}")
-
-        rule_fallback = rule_route_question(text, input_features)
-        if _should_override_llm_decision(decision, rule_fallback):
-            return _with_router_metadata(
-                rule_fallback,
-                router_provider="rule",
-                router_model=llm_config.model,
-                fallback_used=True,
-                fallback_reason=f"llm_route_overridden:{decision.route_type.value}",
-            )
 
         return _with_router_metadata(
             decision,
@@ -174,7 +164,6 @@ def deterministic_route_question(
 ) -> RouteDecision | None:
     """只处理不需要 LLM 判断的高确定性路由。"""
     text = normalized_input.strip()
-    lowered = text.lower()
 
     if input_features.get("has_image"):
         return RouteDecision(
@@ -212,6 +201,21 @@ def deterministic_route_question(
             need_clarification=True,
         )
 
+    return None
+
+
+def rule_route_question(
+    normalized_input: str,
+    input_features: dict[str, Any],
+) -> RouteDecision:
+    """完整规则 Router，作为无模型和模型失败时的稳定兜底。"""
+    deterministic = deterministic_route_question(normalized_input, input_features)
+    if deterministic is not None:
+        return deterministic
+
+    text = normalized_input.strip()
+    lowered = text.lower()
+
     if _has_ingredient_amount_intent(text):
         return RouteDecision(
             route_type=RouteType.GRAPHRAG,
@@ -247,20 +251,6 @@ def deterministic_route_question(
             slots={"analysis_intent": True},
             need_clarification=False,
         )
-
-    return None
-
-
-def rule_route_question(
-    normalized_input: str,
-    input_features: dict[str, Any],
-) -> RouteDecision:
-    """完整规则 Router，作为无模型和模型失败时的稳定兜底。"""
-    deterministic = deterministic_route_question(normalized_input, input_features)
-    if deterministic is not None:
-        return deterministic
-
-    text = normalized_input.strip()
 
     if _has_recipe_howto_intent(text):
         return RouteDecision(
@@ -533,20 +523,6 @@ def _with_router_metadata(
     if fallback_reason:
         slots["fallback_reason"] = fallback_reason
     return decision.model_copy(update={"slots": slots})
-
-
-def _should_override_llm_decision(decision: RouteDecision, rule_fallback: RouteDecision) -> bool:
-    """LLM 自信但明显偏离硬规则时，用规则结果纠偏。"""
-    if (
-        rule_fallback.route_type == RouteType.CLARIFY
-        or rule_fallback.confidence < settings.route_confidence_threshold
-    ):
-        return False
-    if decision.route_type == RouteType.CLARIFY or decision.need_clarification:
-        return True
-    if rule_fallback.slots.get("recipe_howto_intent") and decision.route_type != RouteType.GRAPHRAG:
-        return True
-    return False
 
 
 def _is_low_info_question(text: str) -> bool:
